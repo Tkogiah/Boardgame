@@ -2,7 +2,7 @@ body {
   min-width: 412px;
   margin: 20px;
   margin-top: 50px;
-  background-color: #e9e9ef;
+  background-color: #1a5a00;
   font-size: 0;
   text-align: center;
 }
@@ -10,7 +10,7 @@ body {
 .hex {
   display: inline-block;
   position: relative;
-  width: 76px;
+  width: 78px;
   height: 43.87862px;
   margin: 21.93931px 2px 3.4641px;
   color: rgba(255, 255, 255, 0.75);
@@ -33,11 +33,35 @@ body {
           transform: scaleY(0.57735) rotate(-45deg);
 }
 
-.zero {
+.row-zero {
+  background-color: #c95a00;
+}
+
+.row-one {
+  background-color: #974400;
+}
+
+.row-two {
+  background-color: #6d3100;
+}
+
+.row-three {
+  background-color: #532400;
+}
+
+.row-four {
+  background-color: #291200;
+}
+
+.row-five {
+  background-color: #140a00;
+}
+
+.hex:hover {
   background-color: red;
 }
 
-#1 {
-  background-color: orange;
+.hex:hover::before, .hex:hover::after {
+  background-color: red;
 }
 /*# sourceMappingURL=styles.css.map */
