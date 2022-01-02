@@ -1,0 +1,43 @@
+body {
+  min-width: 412px;
+  margin: 20px;
+  margin-top: 50px;
+  background-color: #e9e9ef;
+  font-size: 0;
+  text-align: center;
+}
+
+.hex {
+  display: inline-block;
+  position: relative;
+  width: 76px;
+  height: 43.87862px;
+  margin: 21.93931px 2px 3.4641px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #55636e;
+  font: 40px/43.87862px sans-serif;
+  vertical-align: middle;
+}
+
+.hex::before, .hex::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 53.74012px;
+  height: 53.74012px;
+  background-color: inherit;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.57735) rotate(-45deg);
+          transform: scaleY(0.57735) rotate(-45deg);
+}
+
+.zero {
+  background-color: red;
+}
+
+#1 {
+  background-color: orange;
+}
+/*# sourceMappingURL=styles.css.map */

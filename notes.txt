@@ -1,0 +1,15 @@
+breakdown of game
+
+
+card deck of 100 cards to draw from and allow user to use and discard them and for them to get randomized back into a shuffle
+cards should be classes and constructors with extensions for each card type that varies
+
+class card(){
+    
+    constructor playCard() {}
+    constructor discard() {}
+
+}
+
+1. make a card deck that can draw 5 cards to start
+
