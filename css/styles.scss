@@ -10,8 +10,40 @@ body {
     text-align: center;
     display: flex;
   }
+
+
+// ANIMATIONS
+@keyframes frozen {
+    0% { transform: skewX(-15deg); color: white; }
+    2% { transform: skewX(15deg); color: rgb(206, 240, 255); }
+    4% { transform: skewX(-15deg); color: rgb(186, 231, 252); }
+    6% { transform: skewX(15deg); color: rgb(170, 228, 255); }
+    8% { transform: skewX(0deg); color: rgb(122, 212, 253); }
+    10% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    50% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    80% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    100% { transform: skewX(0deg); color: rgb(89, 203, 255); }  
+  }
+  @keyframes poisoned {
+    0% { transform: skewY(-2deg);color: white;}
+    10% { transform: skewX(2deg); color: white;}
+    20% { transform: skewY(2deg); color: rgb(179, 255, 179);}
+    30% { transform: skewX(-2deg);color: rgb(179, 255, 179);}
+    60% { transform: skewX(0deg);color: white;}
+    100% { transform: skewX(0deg); color: rgb(255, 255, 255);}  
+  }
+  @keyframes knockback {
+    0% {transform: scaleX(0.5);transform: skewX(30deg); color: white;}
+    5% {transform: scaleX(0.5);transform: skewX(30deg); color: grey;}
+ 
+  }
+
+
+
+//HEXBOARD
   #hexboard {
     max-width: 905px;
+    min-width: 905px;
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 50px;
@@ -69,8 +101,13 @@ body {
 }
 
 
+
+
+//PLAYER DISPLAY MENU
 .right-of-board {
-    width: 50vw;
+    min-width: 905px; 
+    width: 49vw;
+    margin-left: 10px;
     height: 95vh;
     background-color: rgb(151, 68, 0);
     padding: 20px;
@@ -103,8 +140,8 @@ body {
             }
             .speed {
             }
-            .mount {
-
+            .money {
+                
             }
 
         }
@@ -131,23 +168,51 @@ body {
 
             }
         }
-        .orbs {
-            margin-left: 10px;
-            width: 100%;
-            height: 30px;
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            gap: 5px;
 
-            .orb {
-                font-weight: bolder;
-                text-align: center;
-                border: 2px solid black;
-                border-radius: 5px;
-                padding: 3px;
-                background-color: rgba(220, 20, 60, 0.63);
+        .right-top-nav {
+            display: flex;
+            flex-direction: column;
+            .orbs {
+                margin-left: 10px;
+                min-width: 645px;
+                max-width: 645px;
+                height: 30px;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                gap: 5px;
+    
+                .orb {
+                    font-weight: bolder;
+                    text-align: center;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    padding: 3px;
+                    background-color: rgba(220, 20, 60, 0.63);
+                }
+            }
+            .pool {
+                margin: 5px 0px 0px 10px;
+                font-size: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                .poison, .freeze, .knock-back {
+                    margin-top: 20px;
+                    font-weight: bolder;    
+                }
+                .freeze {
+                    animation: 1s frozen infinite alternate;
+                }
+                .poison {
+                    animation: 2s poisoned infinite alternate;
+                }
+                .knock-back {
+                    animation: 2s knockback infinite alternate;
+                }
             }
         }
+        
     }
 
     .middle {
@@ -155,6 +220,7 @@ body {
         width: 100%;
         margin-bottom: 20px;
         border: 3px solid black;
+        
         background-color: rgba(255, 255, 255, 0.555);
 
     }
@@ -163,9 +229,10 @@ body {
     .bottom {
         display: flex;
         flex-direction: row;
+        width: 100%;
         .deck {
-            height: 175px;
-            width: 131.25px;
+            min-height: 175px;
+            min-width: 131.25px;
             border: 2px solid black;
             border-radius: 10px;
             background-color: rgba(0, 120, 0, 0.637);
@@ -176,8 +243,8 @@ body {
             }
         }
         .discard {
-            height: 175px;
-            width: 131.25px;
+            min-height: 175px;
+            min-width: 131.25px;
             border: 2px solid black;
             border-radius: 10px;
             background-color: rgba(120, 0, 0, 0.637);
@@ -187,24 +254,76 @@ body {
                 padding: 5px;
             }
         }
-        .board-details {
+        .active {
             height: 175px;
-            width: 700px;
+            min-width: 95px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+
+            .hand {
+                margin: 10px 5px;
+                padding: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgba(22, 22, 122, 0.637);
+            }
+            .end {
+                margin: 10px 5px;
+                padding: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgba(22, 22, 122, 0.637);
+            }
+            .merchant {
+                margin: 10px 5px;
+                padding: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgba(22, 22, 122, 0.637);
+            }
+        }
+
+        .board-details {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            height: 175px;
+            width: 100%;
             border: 2px solid black;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.582);
             color: white;
             
-            .hand {
-                display: inline-block;
-                margin: 10px;
-                padding: 3px;
+            .show-enemy {
+                font-size: 16px;
+                margin: 3px;
+                
                 border: 2px solid black;
                 border-radius: 5px;
-                background-color: rgba(0, 0, 120, .637);
+                background-color: rgba(120, 0, 0, 0.637);
+            }
+            .show-ally {
+                font-size: 16px;
+                margin: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgba(0, 120, 104, 0.637);
+            }
+            .show-active {
+                font-size: 16px;
+                margin: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgba(120, 118, 0, 0.637);
             }
             
         }
     }
     
 }
+

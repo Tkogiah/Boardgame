@@ -116,30 +116,43 @@
     <div class="right-of-board">
         <div class='top'>
             <div class='stats'>
-                <div class='name'>Name: Marcus</div>
-                <div class="damage">Damage: 1</div>
-                <div class="range">Range: 1</div>
-                <div class="speed">Speed: 1</div>
-                <div class="mount">Mount: none</div>
+                <div class='name' id="name">Name: Marcus</div>
+                <div class="damage" id="damage">Damage: 1</div>
+                <div class="range" id="range">Range: 1</div>
+                <div class="speed" id="speed">Speed: 1</div>
+                <div class="money" id="money">Shards: $15</div>
+                
             </div>
             <div class='photo'>
-                <div class="level">Level: 1</div>
+                <div id='player-stats' class="level">Level: 1</div>
             </div>
-            <div class="orbs">
-               
-                <div class="orb" id="orb-one">Orb</div>
-                <div class="orb" id="orb-two">Orb</div>
-                <div class="orb" id="orb-three">Orb</div>
-                <div class="orb" id="orb-four">Orb</div>
-                <div class="orb" id="orb-five">Orb</div>
-                <div class="orb" id="orb-six">Orb</div>
-                <div class="orb" id="orb-seven">Orb</div>
-                <div class="orb" id="orb-eight">Orb</div>
-                <div class="orb" id="orb-nine">Orb</div>
+            <div class='right-top-nav'>
+                <div class="orbs">
+                    <div class="orb" id="orb-one">Orb</div>
+                    <!-- need to make dynamic -->
+                    
+                    <!-- <div class="orb" id="orb-two">Orb</div>
+                    <div class="orb" id="orb-three">Orb</div>
+                    <div class="orb" id="orb-four">Orb</div>
+                    <div class="orb" id="orb-five">Orb</div>
+                    <div class="orb" id="orb-six">Orb</div>
+                    <div class="orb" id="orb-seven">Orb</div>
+                    <div class="orb" id="orb-eight">Orb</div>
+                    <div class="orb" id="orb-nine">Orb</div>
+                    <div class="orb" id="mount">Mount</div> -->
 
+                </div>    
+                <div class="pool">
+                    
+                    <div id="poison" class="poison">poison</div>
+                    <div id="freeze" class="freeze">freeze</div>
+                    
+                    <div id="knock-back" class="knock-back">knockback</div>
+                    
+
+
+                </div>    
             </div>    
-                
-
         </div>
 
         <canvas class='middle' id="game-screen">
@@ -156,11 +169,38 @@
                 <div id="deck">10</div>
             </div>
             <div class='discard'>
-                <div id="discard">10</div>
+                <div id="discard">Discard pile</div>
+            </div>
+            <div class='active'>
+                <div class="hand" id="hand">Hand</div>
+                <div class="end" id="end">End Turn</div>
+                
+                <!-- need to make dynamic -->
+                <!-- <div class="merchant" id="hand">Merchant</div> -->
             </div>
             <div class='board-details'>
-                <div class="hand" id="hand">Show Hand</div>
+                
+                
+                
+                <div class="show-active" id="active">Active</div>
+                <!-- need to make dynamic -->
+                <!-- <div class="show-enemy" id="enemy">enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-enemy" id="enemy">Show enemy</div>
+                <div class="show-ally" id="enemy">ally</div>
+                <div class="show-ally" id="enemy">Show ally</div>
+                <div class="show-ally" id="enemy">Show ally</div>
+                <div class="show-ally" id="enemy">Show ally</div> -->
+                
 
+                
 
             </div>
 
