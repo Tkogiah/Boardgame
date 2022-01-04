@@ -1,4 +1,6 @@
-const NAME = ['']
+const NAME = ['Action', 'Money']
+const VALUES = [1, 2, 3, 4, 5]
+
 
 class Deck {
     constructor(cards) {
@@ -11,4 +13,13 @@ class Card {
         this.name = name
         this.value = value
     }
+    addNew() {
+        
+    }
 }
+
+
+function buildNewDeck() {
+    
+}
+

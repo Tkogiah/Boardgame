@@ -1,6 +1,9 @@
+
 function log(a) {
     console.log(a)
 }
+
+
 
 const canvas = document.getElementById('canvas');
 
