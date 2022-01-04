@@ -5,7 +5,8 @@
 
 body {
   min-width: 412px;
-  background-color: #1a5a00;
+  color: white;
+  background-color: black;
   font-size: 0;
   text-align: center;
   display: -webkit-box;
@@ -63,11 +64,11 @@ body {
 }
 
 .row-four {
-  background-color: #291200;
+  background-color: #2f1500;
 }
 
 .row-five {
-  background-color: #140a00;
+  background-color: #1d0e00;
 }
 
 .hex:hover {
@@ -79,9 +80,9 @@ body {
 }
 
 .right-of-board {
-  width: 49vw;
+  width: 50vw;
   height: 95vh;
-  background-color: #6e6cf3;
+  background-color: #974400;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,7 +92,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 15px;
-  color: black;
   text-align: left;
   border: 1px solid black;
 }
@@ -109,7 +109,7 @@ body {
 }
 
 .right-of-board .top .stats {
-  margin-left: 10px;
+  margin-left: 0px;
   max-height: 100px;
   min-width: 100px;
   display: -webkit-box;
@@ -122,44 +122,61 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-weight: bolder;
+}
+
+.right-of-board .top .stats .name {
+  min-width: 200px;
 }
 
 .right-of-board .top .photo {
   margin-left: 10px;
   min-width: 100px;
   max-height: 100px;
-  background-color: brown;
+  background-color: white;
+  background-image: url(/assets/scary-man.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.right-of-board .top .photo .level {
+  font-size: 12px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 0;
+  margin-left: 5px;
 }
 
 .right-of-board .top .orbs {
   margin-left: 10px;
   width: 100%;
+  height: 30px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr);
   gap: 5px;
-  grid-auto-rows: minmax(10px, auto);
 }
 
 .right-of-board .top .orbs .orb {
+  font-weight: bolder;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.right-of-board .top .orbs .orb .show {
-  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgba(220, 20, 60, 0.63);
 }
 
 .right-of-board .middle {
   height: 100%;
   width: 100%;
+  margin-bottom: 20px;
+  border: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.555);
 }
 
 .right-of-board .bottom {
@@ -175,20 +192,44 @@ body {
 .right-of-board .bottom .deck {
   height: 175px;
   width: 131.25px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 120, 0, 0.637);
   margin-right: 5px;
+}
+
+.right-of-board .bottom .deck #deck {
+  padding: 5px;
 }
 
 .right-of-board .bottom .discard {
   height: 175px;
   width: 131.25px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(120, 0, 0, 0.637);
   margin-right: 5px;
 }
 
-.right-of-board .bottom .hand {
+.right-of-board .bottom .discard #discard {
+  padding: 5px;
+}
+
+.right-of-board .bottom .board-details {
   height: 175px;
   width: 700px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.582);
+  color: white;
+}
+
+.right-of-board .bottom .board-details .hand {
+  display: inline-block;
+  margin: 10px;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 120, 0.637);
 }
 /*# sourceMappingURL=styles.css.map */
