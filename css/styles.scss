@@ -1,12 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 body {
     min-width: 412px;
-    margin: 20px;
-    margin-top: 50px;
+
     background-color: rgb(26, 90, 0);
     font-size: 0;
     text-align: center;
+    display: flex;
   }
-  
+  #hexboard {
+      max-width: 905px;
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 50px;
+  }
   .hex {
     display: inline-block;
     position: relative;
@@ -57,4 +66,102 @@ body {
     background-color: rgb(255, 0, 0);
 
 
+}
+
+
+.right-of-board {
+    width: 49vw;
+    height: 95vh;
+    background-color: rgb(110, 108, 243);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    border: 1px solid black;
+
+    .top {
+        min-height: 125px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        
+        .stats {
+            margin-left: 10px;
+            max-height: 100px;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .name {
+            }
+            .damage {
+            }
+            .range {
+            }
+            .speed {
+            }
+            .mount {
+
+            }
+
+        }
+        .photo {
+            margin-left: 10px;
+            min-width: 100px;
+            max-height: 100px;
+            background-color: brown;
+            .level {
+
+            }
+        }
+        .orbs {
+            margin-left: 10px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 5px;
+            grid-auto-rows: minmax(10px, auto);
+            .orb {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                .show {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    .middle {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    
+    .bottom {
+        display: flex;
+        flex-direction: row;
+        .deck {
+            height: 175px;
+            width: 131.25px;
+            border: 1px solid black;
+            margin-right: 5px;
+        }
+        .discard {
+            height: 175px;
+            width: 131.25px;
+            border: 1px solid black;
+            margin-right: 5px;
+        }
+        .hand {
+            height: 175px;
+            width: 700px;
+            border: 1px solid black;
+            
+        }
+    }
+    
 }

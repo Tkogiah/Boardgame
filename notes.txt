@@ -13,3 +13,7 @@ class card(){
 
 1. make a card deck that can draw 5 cards to start
 
+ORB/MOUNT
+
+
+10.mount

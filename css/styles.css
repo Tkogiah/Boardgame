@@ -1,10 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   min-width: 412px;
-  margin: 20px;
-  margin-top: 50px;
   background-color: #1a5a00;
   font-size: 0;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#hexboard {
+  max-width: 905px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 50px;
 }
 
 .hex {
@@ -63,5 +76,119 @@ body {
 
 .hex:hover::before, .hex:hover::after {
   background-color: red;
+}
+
+.right-of-board {
+  width: 49vw;
+  height: 95vh;
+  background-color: #6e6cf3;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 15px;
+  color: black;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.right-of-board .top {
+  min-height: 125px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.right-of-board .top .stats {
+  margin-left: 10px;
+  max-height: 100px;
+  min-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.right-of-board .top .photo {
+  margin-left: 10px;
+  min-width: 100px;
+  max-height: 100px;
+  background-color: brown;
+}
+
+.right-of-board .top .orbs {
+  margin-left: 10px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+  grid-auto-rows: minmax(10px, auto);
+}
+
+.right-of-board .top .orbs .orb {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-of-board .top .orbs .orb .show {
+  margin-top: 10px;
+}
+
+.right-of-board .middle {
+  height: 100%;
+  width: 100%;
+}
+
+.right-of-board .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.right-of-board .bottom .deck {
+  height: 175px;
+  width: 131.25px;
+  border: 1px solid black;
+  margin-right: 5px;
+}
+
+.right-of-board .bottom .discard {
+  height: 175px;
+  width: 131.25px;
+  border: 1px solid black;
+  margin-right: 5px;
+}
+
+.right-of-board .bottom .hand {
+  height: 175px;
+  width: 700px;
+  border: 1px solid black;
 }
 /*# sourceMappingURL=styles.css.map */
