@@ -32,11 +32,7 @@ body {
     60% { transform: skewX(0deg);color: white;}
     100% { transform: skewX(0deg); color: rgb(255, 255, 255);}  
   }
-  @keyframes knockback {
-    0% {transform: scaleX(0.5);transform: skewX(30deg); color: white;}
-    5% {transform: scaleX(0.5);transform: skewX(30deg); color: grey;}
- 
-  }
+  
 
 
 

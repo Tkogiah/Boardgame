@@ -176,40 +176,6 @@ body {
   }
 }
 
-@-webkit-keyframes knockback {
-  0% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
-    -webkit-transform: skewX(30deg);
-            transform: skewX(30deg);
-    color: white;
-  }
-  5% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
-    -webkit-transform: skewX(30deg);
-            transform: skewX(30deg);
-    color: grey;
-  }
-}
-
-@keyframes knockback {
-  0% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
-    -webkit-transform: skewX(30deg);
-            transform: skewX(30deg);
-    color: white;
-  }
-  5% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5);
-    -webkit-transform: skewX(30deg);
-            transform: skewX(30deg);
-    color: grey;
-  }
-}
-
 #hexboard {
   max-width: 905px;
   min-width: 905px;
