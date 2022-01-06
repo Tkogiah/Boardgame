@@ -365,7 +365,7 @@ body {
           align-items: center;
 }
 
-.right-of-board .top .right-top-nav .pool .poison, .right-of-board .top .right-top-nav .pool .freeze, .right-of-board .top .right-top-nav .pool .knock-back {
+.right-of-board .top .right-top-nav .pool .poison, .right-of-board .top .right-top-nav .pool .freeze {
   margin-top: 20px;
   font-weight: bolder;
 }
@@ -378,11 +378,6 @@ body {
 .right-of-board .top .right-top-nav .pool .poison {
   -webkit-animation: 2s poisoned infinite alternate;
           animation: 2s poisoned infinite alternate;
-}
-
-.right-of-board .top .right-top-nav .pool .knock-back {
-  -webkit-animation: 2s knockback infinite alternate;
-          animation: 2s knockback infinite alternate;
 }
 
 .right-of-board .middle {

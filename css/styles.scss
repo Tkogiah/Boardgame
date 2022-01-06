@@ -32,7 +32,7 @@ body {
     60% { transform: skewX(0deg);color: white;}
     100% { transform: skewX(0deg); color: rgb(255, 255, 255);}  
   }
-  
+
 
 
 
@@ -54,6 +54,7 @@ body {
     background-color: #55636e;
     font: 40px/43.87862px sans-serif;
     vertical-align: middle;
+
   }
   .hex::before, .hex::after {
     content: '';
@@ -193,7 +194,7 @@ body {
                 flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
-                .poison, .freeze, .knock-back {
+                .poison, .freeze {
                     margin-top: 20px;
                     font-weight: bolder;    
                 }
@@ -203,9 +204,7 @@ body {
                 .poison {
                     animation: 2s poisoned infinite alternate;
                 }
-                .knock-back {
-                    animation: 2s knockback infinite alternate;
-                }
+
             }
         }
         
@@ -322,4 +321,5 @@ body {
     }
     
 }
+
 

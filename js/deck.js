@@ -23,3 +23,4 @@ function buildNewDeck() {
     
 }
 
+export const marcus = 'hello from Marcus in the deck.js file imported to the main.js file'
