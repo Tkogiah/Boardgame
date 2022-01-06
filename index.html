@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defend the Castle</title>
     <link rel="stylesheet" href="/css/styles.css"/>
-    <script src='/js/main.js' defer></script>
+    <script type="module" src='/js/main.js' defer></script>
     
 </head>
 <body>
@@ -61,7 +61,7 @@
         <div id="30" class="hex">30</div>
         <div id="14" class="hex">14</div>
         <div id="4" class="hex">4</div>
-        <div id="0" class="hex"><div class="map-range"></div>0</div>
+        <div id="0" class="hex">0</div>
         <div id="1" class="hex">1</div>
         <div id="8" class="hex">8</div>
         <div id="21" class="hex">21</div>
@@ -113,7 +113,9 @@
         <div id="71" class="hex">71</div>
         <div id="70" class="hex">70</div>
     </div>
-    <div class="right-of-board">
+
+    <!-- playmat begins here -->
+    <div id='playmat' class="right-of-board">
         <div class='top'>
             <div class='stats'>
                 <div class='name' id="name">Name: Marcus</div>

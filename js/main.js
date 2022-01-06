@@ -1,74 +1,14 @@
-
-
-function log(a) {
+import * as board from './board.js';
+import { showHand } from './playmat.js';
+export function log(a) {
     console.log(a)
 }
 
-
+log(board.boardSpaces)
+log(board)
 
 const canvas = document.getElementById('canvas');
 
-const boardSpaces = [];
-
-const board = document.querySelectorAll('.hex');
-
-
-log(board);
-board.forEach((element) => {
-    element.addEventListener('click', (e) => {
-        log(`hello from the ${element.id} div`)
-    })
-    if(element.id >= 1 && element.id <= 6) {
-        element.classList.add('row-one')
-    }
-    else if(element.id >= 7 && element.id <= 18) {
-        element.classList.add('row-two')
-    }
-    else if(element.id >= 19 && element.id <= 36) {
-        element.classList.add('row-three')
-    }
-    else if(element.id >= 37 && element.id <= 60) {
-        element.classList.add('row-four')
-    }
-    else if(element.id >= 61 && element.id <= 90) {
-        element.classList.add('row-five')
-    }
-    else {
-        element.classList.add('row-zero')
-    }
-})
-
-
-
-
-
-for(let i = 0; i <= 90; i++) {
-    let hexagon = {
-        name: `space${i}`,
-        players: [],
-        enemies: [],
-    }
-    if(i >= 1 && i <= 6) {
-        hexagon.money = 1
-    }
-    else if(i >= 7 && i <= 18) {
-        hexagon.money = 2
-    }
-    else if(i >= 19 && i <= 36) {
-        hexagon.money = 3
-    }
-    else if(i >= 37 && i <= 60) {
-        hexagon.money = 4
-    }
-    else if(i >= 61 && i <= 90) {
-        hexagon.money = 5
-    }
-    else {
-        hexagon.money = 0
-    }
-
-    boardSpaces.push(hexagon)
-}
 
 
 
@@ -79,4 +19,51 @@ for(let i = 0; i <= 90; i++) {
 
 
 
-log(boardSpaces)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const hexMatrix = [
+//     [0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0],
+//     [0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0],
+//     [0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0],
+//     [0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0],
+//     [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
+//     [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
+//     [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
+//     [0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0],
+//     [0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0],
+//     [0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0],
+//     [0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0]
+// ]
+// const hexMatrixValues = [
+//     [0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0],
+//     [0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0],
+//     [0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0],
+//     [0,0,1,0,1,0,1,0,16,0,17,0,18,0,19,0,1,0,1,0,0],
+//     [0,1,0,1,0,1,0,15,0,05,00,06,00,07,0,20,0,1,0,1,0],
+//     [1,0,1,0,1,0,14,0,04,00,'z',01,00,08,0,21,0,1,0,1],
+//     [0,1,0,1,0,1,0,13,0,03,00,02,00,09,0,1,0,1,0,1,0],
+//     [0,0,1,0,1,0,1,0,12,00,11,00,10,0,1,0,1,0,1,0,0],
+//     [0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0],
+//     [0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0],
+//     [0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0]
+// ]
+
+//in the hex model grid to go left or right it costs 2 spaces to go up or down to the next matrix costs one space
