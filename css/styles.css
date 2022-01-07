@@ -562,4 +562,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.range {
+  background-color: #8f0000;
+}
 /*# sourceMappingURL=styles.css.map */

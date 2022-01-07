@@ -5,7 +5,7 @@ export function log(a) {
 }
 
 
-log(board)
+
 const canvas = document.getElementById('canvas');
 
 
@@ -35,7 +35,7 @@ const hexMatrix = [
 ]
 
 
-let highlightArr = []
+
 const indexesOfHexMatrix = []
 
 function getAllIndexesOfHexMatrix(hexPosition) {
@@ -54,40 +54,99 @@ function getAllIndexesOfHexMatrix(hexPosition) {
 }
 
 let highlightRangeArray = []
-function fillHighlightRangeArray(range, location) {
+function fillRight(range, row, column) {
     let counter = range*2
-    let rows = indexesOfHexMatrix[location].row
-    let columns = indexesOfHexMatrix[location].column
+    let rows = row
+    let columns = column
     while(counter > 0) {
         columns += 1
-        for(let i = 0; i < indexesOfHexMatrix.length; i++ ) {
-            if(indexesOfHexMatrix[i].rows) {
-            //log(indexesOfHexMatrix[rows][columns])
-            }   
+        if(hexMatrix[rows][columns] != '') {
+            highlightRangeArray.push(hexMatrix[rows][columns])
         }
-        
         counter = counter -1 
     }
-    //counter = range*2
-    // while(counter > 0) {
-    //     let subcolumn = columns
-    //     subcolumn = subcolumn - 1
-    //     if(indexesOfHexMatrix[rows][subcolumn] != '') {
-    //         log(indexesOfHexMatrix[rows][subcolumn])
-    //         highlightRangeArray.push(indexesOfHexMatrix[rows][subcolumn])
-    //     }
-    //     counter = counter -1 
-    // }
 }
+function fillLeft(range, row, column) {
+    let counter = range*2
+    let rows = row
+    let columns = column
+    while(counter > 0) {
+        columns -= 1
+        if(hexMatrix[rows][columns] != '') {
+            highlightRangeArray.push(hexMatrix[rows][columns])
+        }
+        counter = counter -1 
+    }
+}
+
+function fillUp(range, row, column) {
+    let counter = range
+    let rows = row
+    let columns = column
+    while(counter > 0) {
+        rows -= 1
+        
+        if(hexMatrix[rows][columns] != '') {
+            highlightRangeArray.push(hexMatrix[rows][columns])
+
+        }
+        fillRight(counter, rows, columns)
+        fillLeft(counter, rows, columns)
+        counter -= 1 
+    }
+}
+function fillDown(range, row, column) {
+    let counter = range
+    let rows = row
+    let columns = column
+    while(counter > 0) {
+        rows += 1
+        
+        if(hexMatrix[rows][columns] != '') {
+            highlightRangeArray.push(hexMatrix[rows][columns])
+
+        }
+        fillRight(counter, rows, columns)
+        fillLeft(counter, rows, columns)
+        counter -= 1 
+    }
+}
+
+
+function fillHighlightRangeArray(range, location) {
+    let row = indexesOfHexMatrix[location].row
+    let column = indexesOfHexMatrix[location].column
+    fillRight(range, row, column)
+    fillLeft(range, row, column)
+    fillUp(range, row, column)
+    fillDown(range, row, column)
+    
+}
+log(highlightRangeArray)
+function fillRangeHexes(array) {
+    for(let i = 0; i <= array.length; i++) {
+        let inRange = document.getElementById(`${array[i]}`)
+        inRange.classList.add('range')
+        
+    }
+}
+
+
+
+
 
 boardArray.forEach(element => {
     getAllIndexesOfHexMatrix(element)
 })
 
+
+log(highlightRangeArray[0])
 log(indexesOfHexMatrix)
-fillHighlightRangeArray(2, 0)
-log(highlightRangeArray)
-log(indexesOfHexMatrix[5][10])
+fillHighlightRangeArray(1, 0)
+fillRangeHexes(highlightRangeArray)
+
+
+
 
 
 
