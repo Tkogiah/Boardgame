@@ -5,6 +5,7 @@ export function log(a) {
 }
 
 
+log(board)
 const canvas = document.getElementById('canvas');
 
 
@@ -42,7 +43,7 @@ function getAllIndexesOfHexMatrix(hexPosition) {
         for(let j = 0; j < hexMatrix[i].length; j++) {
             if(hexMatrix[i][j] === hexPosition) {
                 let index = {
-                    position: hexPosition,
+                    
                     row: i,
                     column: j
                 }
@@ -52,10 +53,63 @@ function getAllIndexesOfHexMatrix(hexPosition) {
     }
 }
 
-
-
+let highlightRangeArray = []
+function fillHighlightRangeArray(range, location) {
+    let counter = range*2
+    let rows = indexesOfHexMatrix[location].row
+    let columns = indexesOfHexMatrix[location].column
+    while(counter > 0) {
+        columns += 1
+        for(let i = 0; i < indexesOfHexMatrix.length; i++ ) {
+            if(indexesOfHexMatrix[i].rows) {
+            //log(indexesOfHexMatrix[rows][columns])
+            }   
+        }
+        
+        counter = counter -1 
+    }
+    //counter = range*2
+    // while(counter > 0) {
+    //     let subcolumn = columns
+    //     subcolumn = subcolumn - 1
+    //     if(indexesOfHexMatrix[rows][subcolumn] != '') {
+    //         log(indexesOfHexMatrix[rows][subcolumn])
+    //         highlightRangeArray.push(indexesOfHexMatrix[rows][subcolumn])
+    //     }
+    //     counter = counter -1 
+    // }
+}
 
 boardArray.forEach(element => {
     getAllIndexesOfHexMatrix(element)
 })
+
 log(indexesOfHexMatrix)
+fillHighlightRangeArray(2, 0)
+log(highlightRangeArray)
+log(indexesOfHexMatrix[5][10])
+
+
+
+
+
+
+
+// let merchantOne = [];
+// let fire = {
+//     name: 'fire',
+//     damage: 5,
+
+// }
+
+// function merchantDeck(array, object) {
+//     for(let i = 0; i < 10; i++) {
+//         array.push(object)
+//     }
+// }
+
+// merchantDeck(merchantOne, fire)
+
+// log(merchantOne)
+
+ 

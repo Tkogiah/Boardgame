@@ -1,5 +1,3 @@
-const NAME = ['Action', 'Money']
-const VALUES = [1, 2, 3, 4, 5]
 
 
 
@@ -13,25 +11,58 @@ const VALUES = [1, 2, 3, 4, 5]
 
 
 
-class Deck {
-    constructor(cards) {
-        this.cards = cards
-    }
-}
 
+
+/*
 class Card {
-    constructor(name, value) {
-        this.name = name
-        this.value = value
-    }
-    addNew() {
-        
-    }
+    name: name,
+    value: int,
+    description: 'description',
+    discard: function(),
+}
+class Orb extends Card {
+    trade: function(),
+    case1: 'stores money outside of discard pile',
+    case3: 'stat increase',
+    case4: 'copy other orb', 
+}
+class Mount extends Card {
+    attack: int,
+    range: int,
+    case1: linearMovement(),
+    case2: hexagonalMovement()
+}
+class Merchant extends Card {
+    case1: description = '', cost = int, deck = newCards[]
+    case2: 
+    .
+    .
+    .
+    case30: description = ''     
+}
+class Money extends Card {
+    remove: function()
+}
+class Action extends Card {
+    case1: attack,
+    case2: move
 }
 
 
-function buildNewDeck() {
-    
-}
 
+
+
+
+
+
+
+class Merchant extends Card {}
+
+
+
+
+
+
+
+*/
 
