@@ -136,6 +136,8 @@ body {
             .damage {
             }
             .range {
+                background-color: red;
+                z-index: 10;
             }
             .speed {
             }
@@ -356,4 +358,7 @@ body {
 
 }
 
-
+.range {
+    background-color: red;
+    z-index: 10;
+}

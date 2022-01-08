@@ -9,6 +9,7 @@ export function createPlayer(playerName) {
         speed: 1,
         pool: 0,
         location: 0,
+        draws: 0,
         deck: {
             draw: [],
             hand: [],

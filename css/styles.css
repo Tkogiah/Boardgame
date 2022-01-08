@@ -298,6 +298,11 @@ body {
   min-width: 200px;
 }
 
+.right-of-board .top .stats .range {
+  background-color: red;
+  z-index: 10;
+}
+
 .right-of-board .top .photo {
   margin-left: 10px;
   min-width: 100px;
@@ -561,5 +566,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.range {
+  background-color: red;
+  z-index: 10;
 }
 /*# sourceMappingURL=styles.css.map */

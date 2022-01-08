@@ -26,3 +26,8 @@ This means that I will build objects that hold information that can change via t
         belt: {name: 'King's Purse'},
         mount: {name: 'Dragon'},
     }
+
+
+
+
+i[0], i[1], i[2]   
