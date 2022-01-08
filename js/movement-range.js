@@ -65,7 +65,7 @@ function buildArrayOfAllHexIndexes(array, matrix) {
 buildArrayOfAllHexIndexes(indexesOfHexMatrix, hexMatrix)
 
 //ALGORITHMS TO HIGHLIGHT RANGE BASED ON CHARACTER RANGE
-let highlightRangeArray = []
+export let highlightRangeArray = []
 function fillRight(range, row, column) {
     let counter = range*2
     let rows = row
@@ -151,13 +151,12 @@ export function fillHighlightRangeArray(range, location) {
     fillUp(range, row, column)
     fillDown(range, row, column)
     // highlightRangeArray.sort((a,b) => a-b)
-    log(highlightRangeArray)
     highlightHexes(highlightRangeArray, 'red')
     
 }
 
 
-let highlightMovementArray = []
+export let highlightMovementArray = []
 
 export function fillHighlightMovementArray(speed, action, location) {
     highlightMovementArray = []
@@ -168,6 +167,5 @@ export function fillHighlightMovementArray(speed, action, location) {
         if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
     }
     //highlightMovementArray.sort((a,b) => a-b)
-    log(highlightMovementArray)
     highlightHexes(highlightMovementArray, 'yellow')
 }

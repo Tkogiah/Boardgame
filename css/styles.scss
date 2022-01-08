@@ -136,8 +136,7 @@ body {
             .damage {
             }
             .range {
-                background-color: red;
-                z-index: 10;
+
             }
             .speed {
             }
@@ -151,7 +150,7 @@ body {
             min-width: 100px;
             max-height: 100px;
             background-color: white;
-            background-image: url(/assets/scary-man.jpg);
+            
             background-repeat: no-repeat;
             background-size: cover;
             border: 2px solid black;
@@ -230,31 +229,36 @@ body {
         flex-direction: row;
         width: 100%;
         display: visible;
-        .deck {
+
+        @mixin cardstats {
             min-height: 175px;
             min-width: 131.25px;
             border: 2px solid black;
             border-radius: 10px;
-            background-color: rgba(0, 120, 0, 0.637);
             margin-right: 5px;
-
-            #deck {
-                padding: 5px;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+        .deck {
+            @include cardstats;
+            background-color: rgba(0, 120, 0, 0.637);
+    
         }
         .discard {
-            min-height: 175px;
-            min-width: 131.25px;
-            border: 2px solid black;
-            border-radius: 10px;
+            @include cardstats;
             background-color: rgba(120, 0, 0, 0.637);
-            margin-right: 5px;
-
-            #discard {
-                padding: 5px;
-            }
         }
-        .active {
+        .draw {
+            padding-bottom: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            
+        }
+        .actions {
             height: 175px;
             min-width: 95px;
             
@@ -263,27 +267,23 @@ body {
             justify-content: space-evenly;
             text-align: center;
 
-            .hand {
+            @mixin actions {
                 margin: 10px 5px;
                 padding: 3px;
                 border: 2px solid black;
                 border-radius: 5px;
                 background-color: rgba(22, 22, 122, 0.637);
             }
-            .end {
-                margin: 10px 5px;
-                padding: 3px;
-                border: 2px solid black;
-                border-radius: 5px;
-                background-color: rgba(22, 22, 122, 0.637);
+            .hand {
+                @include actions
             }
             .merchant {
-                margin: 10px 5px;
-                padding: 3px;
-                border: 2px solid black;
-                border-radius: 5px;
-                background-color: rgba(22, 22, 122, 0.637);
+                @include actions
             }
+            .end {
+                @include actions 
+            }
+            
         }
 
         .board-details {
@@ -299,29 +299,25 @@ body {
             background-color: rgba(255, 255, 255, 0.582);
             color: white;
             
-            .show-enemy {
+            @mixin toggle {
                 font-size: 16px;
                 margin: 3px;
-                
                 border: 2px solid black;
                 border-radius: 5px;
+            }
+            .show-enemy {
+                @include toggle;
                 background-color: rgba(120, 0, 0, 0.637);
             }
             .show-ally {
-                font-size: 16px;
-                margin: 3px;
-                border: 2px solid black;
-                border-radius: 5px;
+                @include toggle;
                 background-color: rgba(0, 120, 104, 0.637);
             }
-            .show-active {
+            .active {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 16px;
-                margin: 3px;
-                border: 2px solid black;
-                border-radius: 5px;
+                @include toggle;
                 background-color: rgba(120, 118, 0, 0.637);
             }
             
@@ -359,18 +355,22 @@ body {
 }
 
 .red {
-    background-color: rgba(255, 0, 0, 0.500);
-    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.300);
+    z-index: 1;
 }
 .yellow {
-    background-color: rgba(255, 200, 0, 0.5);
-    z-index: 10;
+    background-color: rgba(255, 200, 0, 0.4);
+    z-index: 1;
 }
 .green {
-    background-color: rgba(0, 255, 0, 0.5);
-    z-index: 10
+    background-color: rgba(0, 255, 0, 0.3);
+    z-index: 1
 }
 .blue {
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgba(0, 0, 255, 1);
+    z-index: 1
+}
+.enemy {
+    background-color: purple;
     z-index: 10
 }

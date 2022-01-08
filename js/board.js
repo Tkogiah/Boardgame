@@ -1,16 +1,17 @@
 import { log } from './main.js';
+import { highlightRangeArray } from './movement-range.js';
+
+
+
 
 
 export const boardSpaces = [];
 
-export const board = document.querySelectorAll('.hex');
+const board = document.querySelectorAll('.hex');
 
 
 
 board.forEach((element) => {
-    element.addEventListener('click', (e) => {
-        log(`hello from the ${element.id} div`)
-    })
     if(element.id >= 1 && element.id <= 6) {
         element.classList.add('row-one')
     }

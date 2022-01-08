@@ -1,4 +1,14 @@
+import { log } from "./main.js"
+
 export const characterArray = []
+
+
+
+
+
+
+
+
 
 export function createPlayer(playerName) {
     let player = {
@@ -27,13 +37,13 @@ export function createPlayer(playerName) {
 
 //log(createPlayer('Marcus')) => 'Marcus' needs to be in 'quotes' to make it a string.
 
-export function createEnemy() {
+export function createEnemy(location) {
     let enemy = {
         name: 'bad guy',
         img: 'img',
         speed: 1,
         health: 10,
-        location: 90,
+        location: location,
         color: 'purple',
         deck: {
             draw: [],
@@ -43,3 +53,4 @@ export function createEnemy() {
     }
     characterArray.push(enemy)
 }
+

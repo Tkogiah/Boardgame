@@ -298,17 +298,11 @@ body {
   min-width: 200px;
 }
 
-.right-of-board .top .stats .range {
-  background-color: red;
-  z-index: 10;
-}
-
 .right-of-board .top .photo {
   margin-left: 10px;
   min-width: 100px;
   max-height: 100px;
   background-color: white;
-  background-image: url(/assets/scary-man.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border: 2px solid black;
@@ -414,12 +408,22 @@ body {
   min-width: 131.25px;
   border: 2px solid black;
   border-radius: 10px;
-  background-color: rgba(0, 120, 0, 0.637);
   margin-right: 5px;
-}
-
-.right-of-board .bottom .deck #deck {
-  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(0, 120, 0, 0.637);
 }
 
 .right-of-board .bottom .discard {
@@ -427,15 +431,31 @@ body {
   min-width: 131.25px;
   border: 2px solid black;
   border-radius: 10px;
-  background-color: rgba(120, 0, 0, 0.637);
   margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(120, 0, 0, 0.637);
 }
 
-.right-of-board .bottom .discard #discard {
-  padding: 5px;
+.right-of-board .bottom .draw {
+  padding-bottom: 50px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.right-of-board .bottom .active {
+.right-of-board .bottom .actions {
   height: 175px;
   min-width: 95px;
   display: -webkit-box;
@@ -451,7 +471,7 @@ body {
   text-align: center;
 }
 
-.right-of-board .bottom .active .hand {
+.right-of-board .bottom .actions .hand {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
@@ -459,7 +479,7 @@ body {
   background-color: rgba(22, 22, 122, 0.637);
 }
 
-.right-of-board .bottom .active .end {
+.right-of-board .bottom .actions .merchant {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
@@ -467,7 +487,7 @@ body {
   background-color: rgba(22, 22, 122, 0.637);
 }
 
-.right-of-board .bottom .active .merchant {
+.right-of-board .bottom .actions .end {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
@@ -508,7 +528,7 @@ body {
   background-color: rgba(0, 120, 104, 0.637);
 }
 
-.right-of-board .bottom .board-details .show-active {
+.right-of-board .bottom .board-details .active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -569,22 +589,27 @@ body {
 }
 
 .red {
-  background-color: rgba(255, 0, 0, 0.5);
-  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .yellow {
-  background-color: rgba(255, 200, 0, 0.5);
-  z-index: 10;
+  background-color: rgba(255, 200, 0, 0.4);
+  z-index: 1;
 }
 
 .green {
-  background-color: rgba(0, 255, 0, 0.5);
-  z-index: 10;
+  background-color: rgba(0, 255, 0, 0.3);
+  z-index: 1;
 }
 
 .blue {
-  background-color: rgba(0, 0, 255, 0.5);
+  background-color: blue;
+  z-index: 1;
+}
+
+.enemy {
+  background-color: purple;
   z-index: 10;
 }
 /*# sourceMappingURL=styles.css.map */
