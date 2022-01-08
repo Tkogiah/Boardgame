@@ -1,6 +1,6 @@
 import * as board from './board.js';
 import * as characters from './characters.js'
-import { fillHighlightRangeArray } from './movement-range.js'
+import { fillHighlightRangeArray, fillHighlightMovementArray } from './movement-range.js'
 import { showHand } from './playmat.js';
 export function log(a) {
     console.log(a)
@@ -10,6 +10,7 @@ export function log(a) {
 
 
 
-fillHighlightRangeArray(1,0)
+fillHighlightRangeArray(3,33)
+fillHighlightMovementArray(6, 1, 33)
 
 

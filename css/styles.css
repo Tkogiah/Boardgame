@@ -568,8 +568,23 @@ body {
           flex-direction: column;
 }
 
-.range {
-  background-color: red;
+.red {
+  background-color: rgba(255, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.yellow {
+  background-color: rgba(255, 200, 0, 0.5);
+  z-index: 10;
+}
+
+.green {
+  background-color: rgba(0, 255, 0, 0.5);
+  z-index: 10;
+}
+
+.blue {
+  background-color: rgba(0, 0, 255, 0.5);
   z-index: 10;
 }
 /*# sourceMappingURL=styles.css.map */

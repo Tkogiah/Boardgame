@@ -7,7 +7,7 @@ export function createPlayer(playerName) {
         attack: 1,
         range: 1,
         speed: 1,
-        pool: 0,
+        actions: 0,
         location: 0,
         draws: 0,
         deck: {

@@ -36,7 +36,7 @@ const hexMatrix = [
 ]
 
 const indexesOfHexMatrix = []//GIVES ALL HEX INDEXES CALCULATING RAN
-const highlightRangeArray = [] 
+ 
 
 //BUILDS AND RETURNS AN ARRAY OF 0-90 WHEN CALLED
 function boardHexes() {
@@ -65,7 +65,7 @@ function buildArrayOfAllHexIndexes(array, matrix) {
 buildArrayOfAllHexIndexes(indexesOfHexMatrix, hexMatrix)
 
 //ALGORITHMS TO HIGHLIGHT RANGE BASED ON CHARACTER RANGE
-
+let highlightRangeArray = []
 function fillRight(range, row, column) {
     let counter = range*2
     let rows = row
@@ -125,18 +125,23 @@ function fillDown(range, row, column) {
         counter = counter -1 
     }
 }
-function highlightHexes(array) {
+function highlightHexes(array, color) {
     array.forEach((e) => {
         if(e <=90 ){
-            let range = document.getElementById(e)
-            range.classList.add('range')
+            let hexColor = document.getElementById(e)
+            if(e == array[0]){hexColor.classList.add('blue')}
+            if(hexColor.classList.contains('red') || hexColor.classList.contains('yellow')) {
+                hexColor.classList.add('green')
+            }
+            hexColor.classList.add(color)
         }
     })
 }
 
 export function fillHighlightRangeArray(range, location) {
+    highlightRangeArray = []
     if(range >= 10) {
-       return highlightHexes(boardHexes())   
+       return highlightHexes(boardHexes(), 'red')   
     } 
     let row = indexesOfHexMatrix[location].row
     let column = indexesOfHexMatrix[location].column
@@ -145,8 +150,24 @@ export function fillHighlightRangeArray(range, location) {
     fillLeft(range, row, column)
     fillUp(range, row, column)
     fillDown(range, row, column)
-    highlightRangeArray.sort((a,b) => a-b)
+    // highlightRangeArray.sort((a,b) => a-b)
     log(highlightRangeArray)
-    highlightHexes(highlightRangeArray)
+    highlightHexes(highlightRangeArray, 'red')
     
+}
+
+
+let highlightMovementArray = []
+
+export function fillHighlightMovementArray(speed, action, location) {
+    highlightMovementArray = []
+    let beginningPoint = location-speed*action;
+    let endPoint = location+speed*action;
+    highlightMovementArray.push(location)
+    for (let i = beginningPoint; i<= endPoint; i++) {
+        if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
+    }
+    //highlightMovementArray.sort((a,b) => a-b)
+    log(highlightMovementArray)
+    highlightHexes(highlightMovementArray, 'yellow')
 }
