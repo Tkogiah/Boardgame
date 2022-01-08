@@ -1,19 +1,28 @@
-breakdown of game
+flow of data
 
-
-card deck of 100 cards to draw from and allow user to use and discard them and for them to get randomized back into a shuffle
-cards should be classes and constructors with extensions for each card type that varies
-
-class card(){
+the game renders its new content bascially from objects and arrays that contain data.
+I want my player object to hold all the values that need to be ran everytime something in the state changes.
+This means that I will build objects that hold information that can change via the user inputs
+    once the objects are built, a render state function should be called everytime the user interacts with the page.
+    for example I could have a player object which reads...
     
-    constructor playCard() {}
-    constructor discard() {}
-
-}
-
-1. make a card deck that can draw 5 cards to start
-
-ORB/MOUNT
-
-
-10.mount
+    let player = {
+        name: 'Marcus',
+        img: 'main.jpg,
+        attack: 3,
+        range: 2,
+        speed: 3,
+        location: 0,
+        color: 'blue',
+        deck: {
+            draw: [],
+            hand: [],
+            discard: []
+        }
+        head: {name: 'Elvish Crown'},
+        gloves: {name: 'Gauntlet of Power'},
+        weapon: {name: 'Adamantine'},
+        shoes: {name: 'Boots of speed'},
+        belt: {name: 'King's Purse'},
+        mount: {name: 'Dragon'},
+    }

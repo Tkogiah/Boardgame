@@ -1,8 +1,21 @@
 import * as board from './board.js';
+import * as characters from './characters.js'
 import { showHand } from './playmat.js';
 export function log(a) {
     console.log(a)
 }
+
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+characters.createEnemy()
+log(characters.characterArray)
 
 
 
@@ -34,10 +47,7 @@ const hexMatrix = [
     ['','','','','',75,'',74,'',73,'',72,'',71,'',70,'','','','','']
 ]
 
-
-
 const indexesOfHexMatrix = []
-
 function getAllIndexesOfHexMatrix(hexPosition) {
     for(let i = 0; i < hexMatrix.length; i++) {
         for(let j = 0; j < hexMatrix[i].length; j++) {
@@ -53,7 +63,7 @@ function getAllIndexesOfHexMatrix(hexPosition) {
     }
 }
 
-let highlightRangeArray = []
+const highlightRangeArray = []
 function fillRight(range, row, column) {
     let counter = range*2
     let rows = row
@@ -78,7 +88,6 @@ function fillLeft(range, row, column) {
         counter = counter -1 
     }
 }
-
 function fillUp(range, row, column) {
     let counter = range
     let rows = row
@@ -111,8 +120,6 @@ function fillDown(range, row, column) {
         counter -= 1 
     }
 }
-
-
 function fillHighlightRangeArray(range, location) {
     let row = indexesOfHexMatrix[location].row
     let column = indexesOfHexMatrix[location].column
@@ -122,14 +129,7 @@ function fillHighlightRangeArray(range, location) {
     fillDown(range, row, column)
     
 }
-log(highlightRangeArray)
-function fillRangeHexes(array) {
-    for(let i = 0; i <= array.length; i++) {
-        let inRange = document.getElementById(`${array[i]}`)
-        inRange.classList.add('range')
-        
-    }
-}
+
 
 
 
@@ -140,10 +140,8 @@ boardArray.forEach(element => {
 })
 
 
-log(highlightRangeArray[0])
-log(indexesOfHexMatrix)
-fillHighlightRangeArray(1, 0)
-fillRangeHexes(highlightRangeArray)
+
+
 
 
 
