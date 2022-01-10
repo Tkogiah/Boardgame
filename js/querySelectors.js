@@ -36,10 +36,7 @@ export function discard(id, arrayLength) {
     $(id).innerText = `Discard: (${arrayLength})`
 }
 export function enemyTakesDamage(location, damage) {
-    document.getElementById(location).classList.add('enemy')
-    document.getElementById(location).addEventListener('click', (e) => {
-        log(`you did ${damage} damage`)
-    }) 
+     
 }
 
 

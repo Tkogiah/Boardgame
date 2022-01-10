@@ -2,14 +2,6 @@ import { log } from "./main.js"
 
 export const characterArray = []
 
-
-
-
-
-
-
-
-
 export function createPlayer(playerName) {
     let player = {
         name: playerName,
@@ -52,5 +44,9 @@ export function createEnemy(location) {
         },
     }
     characterArray.push(enemy)
+    document.getElementById(location).classList.add('enemy')
+    document.getElementById(location).addEventListener('click', (e) => {
+        log(`you did damage`)
+    })
 }
 
