@@ -3,6 +3,7 @@ import { log } from "./main.js"
 export const characterArray = []
 
 export function createPlayer(playerName) {
+    constructor(playerName)
     let player = {
         name: playerName,
         img: 'img',
