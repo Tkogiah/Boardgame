@@ -1,33 +1,14 @@
 flow of data
 
-the game renders its new content bascially from objects and arrays that contain data.
-I want my player object to hold all the values that need to be ran everytime something in the state changes.
-This means that I will build objects that hold information that can change via the user inputs
-    once the objects are built, a render state function should be called everytime the user interacts with the page.
-    for example I could have a player object which reads...
-    
-    let player = {
-        name: 'Marcus',
-        img: 'main.jpg,
-        attack: 3,
-        range: 2,
-        speed: 3,
-        location: 0,
-        color: 'blue',
-        deck: {
-            draw: [],
-            hand: [],
-            discard: []
-        }
-        head: {name: 'Elvish Crown'},
-        gloves: {name: 'Gauntlet of Power'},
-        weapon: {name: 'Adamantine'},
-        shoes: {name: 'Boots of speed'},
-        belt: {name: 'King's Purse'},
-        mount: {name: 'Dragon'},
-    }
+-modal (how many players? 1,2,3,4,5)
+
+-choose
+-name, speed, range, damage, picture, (add relic later)
+
+these values then become arguments for a function createPlayer(name:string, range: int, damage: int, picture: img)
+
+createPlayer needs to then take those values and build the following object of data
 
 
-
-
-i[0], i[1], i[2]   
+Notes outside of coding I had no better place to write it:
+    1. Relational conflict in a certain context, is the process of two people trying to 'fit into' each others' lives. This 'fitting' is a more abstract symbol for sex, or more appropriately 'intercourse'. This fitting in then, by reason, should be able to produce a type of offspring (again abstractly). Conflict is the name of one of these children.
