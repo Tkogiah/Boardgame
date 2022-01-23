@@ -9,6 +9,99 @@ these values then become arguments for a function createPlayer(name:string, rang
 
 createPlayer needs to then take those values and build the following object of data
 
+    function createPlayer(...args) {
+        let player = {
+            name:args[0],
+            level: 1,
+            speed: args[1],
+            range: args[2], 
+            damage: args[3], 
+            picture: args[4],
+            position: 0,
+            deck: {
+                draw-pile: [],
+                hande-pile: [],
+                discard-pile: []
+            }
+            remainingAttacks: 0,
+            remainingMovements: 0,
+            remainingDraws: 5,
+
+        }
+    }
+
+    const playerOne = createPlayer(...args)
+
+    const playerTwo = createPlayer(...args)
+    const playerThree = createPlayer(...args)
+    const playerFour = createPlayer(...args)
+    const playerFive = createPlayer(...args)
+    
+const playerArray = [playerOne, playerTwo, playerThree, plyerFour, playerFive]
+
+CARDS
+ Each card will carry a description and at leats one function...
+
+    class CardCreator {
+        constructor(...args) generalCard = {
+            name = this.args[0]
+            description = this.args[1]
+            cost = this.args[2]
+        }
+        
+        cardSideEffect() {
+
+        }
+        .
+        .
+        .
+        sideEffects
+    }
+
+
+
+that 
+
+
+
+players = [...players]
+enemies = [...enemies]
+
+take all the data from the players and enemies arrays and create the game state at round 1.1
+
+board and playmat is displayed => function displayGame(a,b)
+
+
+
+functions and variables on gameboard
+
+//during player phase
+    let position
+    move()
+    attack()
+
+//during clean-up phase
+    positionAtEndOfTurn( position ) => updates specific player's location on the board.
+
+    
+
+const round1.1 = {
+    round: 1,
+    turn: 1,
+    players: [...args],
+    enemies: [...args]
+}
+
+
+
+
+
+1. get data to store for round 1.1
+
+2. get 
+
+
+
 
 Notes outside of coding I had no better place to write it:
     1. Relational conflict in a certain context, is the process of two people trying to 'fit into' each others' lives. This 'fitting' is a more abstract symbol for sex, or more appropriately 'intercourse'. This fitting in then, by reason, should be able to produce a type of offspring (again abstractly). Conflict is the name of one of these children.

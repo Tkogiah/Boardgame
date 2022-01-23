@@ -610,6 +610,10 @@ body {
 
 .enemy {
   background-color: purple;
-  z-index: 10;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
