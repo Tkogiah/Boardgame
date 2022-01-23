@@ -13,7 +13,9 @@ export function name(id, name) {
     $(id).innerText = `Name: ${name}` 
 }
 
-let level = 3
+const primaryAttribute = 5
+const secondaryAttribute = 3
+const tritiaryAttribute = 2
 
 export function damage(id, damage) {
     $(id).innerText = `Damage: ${damage}` 
