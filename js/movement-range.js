@@ -129,6 +129,7 @@ function highlightHexes(array, color) {
     array.forEach((e) => {
         if(e <=90 ){
             let hexColor = document.getElementById(e)
+            hexColor.classList.remove('red')
             if(e == array[0]){hexColor.classList.add('blue')}
             if(hexColor.classList.contains('red') || hexColor.classList.contains('yellow')) {
                 hexColor.classList.add('green')

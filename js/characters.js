@@ -45,31 +45,46 @@ export function enemyTakesDamage(location, damage) {
 
 export const characterArray = []
 
-export function createPlayer(name, level, speed, range, damage) {
-    
-    let player = {
-        name: name,
-        level: level,
-        speed: 3,
-        range: 4, 
-        damage: 2,
-        money: 0,
-        picture: '/assets/scary-man.jpg',
-        position: 0,
-        deck: {
+class Player {
+    constructor(playerName) {
+        this.name = playerName,
+        this.level = 1,
+        this.money = 0,
+        this.location = 0,
+        this.deck = {
             drawPile:['card one','card one','card one','card one','card one'],
             handPile:['card two', 'card-two', 'card-two','card-two','card-two'],
             discardPile: ['card-three']
         },
-        remainingAttacks: 0,
-        remainingMovements: 0,
-        remainingDraws: 0,
-    
+        this.remainingAttacks = 0,
+        this.remainingMovements = 0,
+        this.remainingDraws = 0
     }
-
-    characterArray.push(player)
-    log(characterArray)
+    
 }
+export class Archer extends Player {
+    constructor(name) {
+        super(name)
+        this.playerClass = Archer;
+        this.speed = 3,
+        this.range = 5,
+        this.picture = '/assets/Archer.png', 
+        this.damage = 2
+    }
+}
+export class Fighter extends Player {
+    constructor(name) {
+        super(name)
+        this.playerClass = Fighter;
+        this.speed = 3,
+        this.range = 2,
+        this.picture = '/assets/Fighter.jpg', 
+        this.damage = 5
+    }
+}
+
+
+
 
 //log(createPlayer('Marcus')) => 'Marcus' needs to be in 'quotes' to make it a string.
 

@@ -8,33 +8,35 @@ export function $(id) {
         return id[0]
     }
 }
-export function name(id, name) {
-    $(id).innerText = `Name: ${name}` 
+export function name(id, index) {
+    $(id).innerText = `Name: ${index.name}` 
 }
-export function damage(id, damage) {
-    $(id).innerText = `Damage: ${damage}` 
+export function damage(id, index) {
+    $(id).innerText = `Damage: ${index.damage}` 
 }
-export function range(id, range) {
-    $(id).innerText = `Range: ${range}` 
+export function range(id, index) {
+    $(id).innerText = `Range: ${index.range}` 
 }
-export function speed(id, speed) {
-    $(id).innerText = `Speed: ${speed}` 
+export function speed(id, index) {
+    $(id).innerText = `Speed: ${index.speed}` 
 }
-export function money(id, money) {
-    $(id).innerText = `Money: $${money}` 
+export function money(id, index) {
+    $(id).innerText = `Money: $${index.money}` 
 }
-export function photo(id, url) {
-    $(id).style.backgroundImage = `url(${url})`
+export function photo(id, index) {
+    $(id).style.backgroundImage = `url(${index.picture})`
 }
-export function level(id, level) {
-    $(id).innerText = `Level: ${level}`
+export function level(id, index) {
+    $(id).innerText = `Level: ${index.level}`
 }
-export function draw(id, arrayLength) {
-    $(id).innerText = `Draw: (${arrayLength})`
+export function draw(id, index) {
+    $(id).innerText = `Draw: (${index.length})`
 }
-export function discard(id, arrayLength) {
-    $(id).innerText = `Discard: (${arrayLength})`
+export function discard(id, index) {
+    $(id).innerText = `Discard: (${index.length})`
 }
+
+
 export function enemyTakesDamage(location, damage) {
      
 }
