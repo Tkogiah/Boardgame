@@ -12,4 +12,4 @@ export function log(a) {
 
 
 
-p.displayActivePlayer(2)
+p.displayActivePlayer(1)
