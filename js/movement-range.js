@@ -138,16 +138,10 @@ function highlightHexes(array, color) {
         }
     })
 }
-function clearHighlightedHexes(array) {
-    array.forEach((e) => {
-        if(e <=90 ){
-            let hexColor = document.getElementById(e)
-            hexColor.classList.remove('red')
-            hexColor.classList.remove('blue') 
-            hexColor.classList.remove('yellow') 
-            hexColor.classList.remove('green')  
-        }
-    })
+function clearHighlightedHexes(color) {
+    for(let i = 0; i <= 90; i++) {
+        document.getElementById(i).classList.remove(color)
+    }
 }
 
 export function fillHighlightRangeArray(range, location) {
@@ -163,7 +157,7 @@ export function fillHighlightRangeArray(range, location) {
     fillUp(range, row, column)
     fillDown(range, row, column)
     // highlightRangeArray.sort((a,b) => a-b)
-    clearHighlightedHexes(highlightRangeArray)
+    clearHighlightedHexes('red')
     highlightHexes(highlightRangeArray, 'red')
     
 }
@@ -180,6 +174,6 @@ export function fillHighlightMovementArray(speed, action, location) {
         if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
     }
     //highlightMovementArray.sort((a,b) => a-b)
-    clearHighlightedHexes(highlightMovementArray)
+    clearHighlightedHexes('yellow')
     highlightHexes(highlightMovementArray, 'yellow')
 }
