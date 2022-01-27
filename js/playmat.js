@@ -15,28 +15,28 @@ function $(id) {
 let endTurn = $('end')
 let turn = 0
 endTurn.addEventListener('click', function() {
-    if(turn >= playerArray.length) {
-        turn = 0
+    playerArray.push(playerArray[0])
+    playerArray.shift()
+    if(playerArray[0]) {
+        log(playerArray[0])
     }
-    turn += 1
-    
-    displayActivePlayer(turn)
+    displayActivePlayer(0)
 })
 
 
 
 let playerOne = new c.Archer('Julia')
 let playerTwo = new c.Fighter('Marcus')
+let enemyOne = new c.Enemy('goblin')
 
 export let playerArray = [playerOne, playerTwo]
+export let enemyArray = [enemyOne]
 
 export function displayActivePlayer(index) {
     if(playerArray[index] === undefined) { 
         index = 0;
-        //WRITE THE FUNCTION THAT DOES THE ENEMYS' TURNS AND ENVOKE IT BELOW
-        log(turn)
+        runEnemyTurn()
     }
-        //WRITE THE FUNCTION THAT DOES THE ENEMYS' TURNS AND ENVOKE IT ABOVE
     q.name('name', playerArray[index])
     q.damage('damage', playerArray[index])
     q.range('range', playerArray[index])
@@ -50,7 +50,11 @@ export function displayActivePlayer(index) {
 
 }
 
+function runEnemyTurn() {
+    // enemyArray.forEach( e => {
 
+    // })
+}
 
 
 

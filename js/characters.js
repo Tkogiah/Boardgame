@@ -61,6 +61,7 @@ class Player {
         this.remainingDraws = 0
     }
     
+    
 }
 export class Archer extends Player {
     constructor(name) {
@@ -86,11 +87,26 @@ export class Fighter extends Player {
 
 
 
-//log(createPlayer('Marcus')) => 'Marcus' needs to be in 'quotes' to make it a string.
-
+//BE MINDFUL OF STRINGS
+export class Enemy {
+    constructor(enemy) {
+        this.name = enemy,
+        this.health = 10,
+        this.location = 90,
+        
+        this.remainingAttacks = 0,
+        this.remainingMovements = 0,
+        this.remainingDraws = 0
+    }
+    getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    
+    
+}
 export function createEnemy(location) {
     let enemy = {
-        name: 'bad guy',
+        name: 'enemy',
         img: 'img',
         speed: 1,
         health: 10,

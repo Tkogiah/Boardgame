@@ -9,7 +9,5 @@ export function log(a) {
 }
 
 
+p.displayActivePlayer(0)
 
-
-
-p.displayActivePlayer(1)

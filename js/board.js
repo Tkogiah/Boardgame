@@ -1,6 +1,6 @@
 import { log } from './main.js';
 import { highlightRangeArray } from './movement-range.js';
-
+import * as p from './playmat.js'
 
 
 
@@ -9,7 +9,15 @@ export const boardSpaces = [];
 
 const board = document.querySelectorAll('.hex');
 
-
+board.forEach( e => {
+    e.addEventListener('click', function() {
+        if(e.classList.contains('red')) {
+            p.playerArray[0].money +=1
+            p.displayActivePlayer(0)
+        }
+        else {log('not red')}
+    })
+})
 
 board.forEach((element) => {
     if(element.id >= 1 && element.id <= 6) {
@@ -33,30 +41,19 @@ board.forEach((element) => {
 })
 
 
-for(let i = 0; i <= 90; i++) {
-    let hexagon = {
-        name: `space${i}`,
-        players: [],
-        enemies: [],
+function getIncome(location) {
+    if( location >= 1 && location <= 6) {
+         return 1
+    }else if(location >= 7 && location <= 18) {
+        return 2
+    }else if(location >= 19 && location <= 36) {
+        return 3
+    }else if(location >= 37 && location <= 60) {
+        return 4
+    }else if(location >= 61 && location <= 90) {
+        return 5
+    }else {
+        return 0
     }
-    if(i >= 1 && i <= 6) {
-        hexagon.money = 1
-    }
-    else if(i >= 7 && i <= 18) {
-        hexagon.money = 2
-    }
-    else if(i >= 19 && i <= 36) {
-        hexagon.money = 3
-    }
-    else if(i >= 37 && i <= 60) {
-        hexagon.money = 4
-    }
-    else if(i >= 61 && i <= 90) {
-        hexagon.money = 5
-    }
-    else {
-        hexagon.money = 0
-    }
-
-    boardSpaces.push(hexagon)
 }
+
