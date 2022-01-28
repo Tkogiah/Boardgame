@@ -85,14 +85,14 @@ export class Fighter extends Player {
 }
 
 
-
+export const enemyArray = []
 
 //BE MINDFUL OF STRINGS
 export class Enemy {
     constructor(enemy) {
         this.name = enemy,
         this.health = 10,
-        this.location = 90,
+        this.location = 18,
         
         this.remainingAttacks = 0,
         this.remainingMovements = 0,
@@ -103,25 +103,5 @@ export class Enemy {
     }
     
     
-}
-export function createEnemy(location) {
-    let enemy = {
-        name: 'enemy',
-        img: 'img',
-        speed: 1,
-        health: 10,
-        location: location,
-        color: 'purple',
-        deck: {
-            draw: [],
-            hand: [],
-            discard: []
-        },
-    }
-    characterArray.push(enemy)
-    document.getElementById(location).classList.add('enemy')
-    document.getElementById(location).addEventListener('click', (e) => {
-        log(`you did damage`)
-    })
 }
 

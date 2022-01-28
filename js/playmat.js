@@ -50,10 +50,15 @@ export function displayActivePlayer(index) {
 
 }
 
-function runEnemyTurn() {
-    // enemyArray.forEach( e => {
+export function displayActiveEnemies(enemiesArray) {
+    enemiesArray.forEach(element => {
+        document.getElementById(element.location).classList.add('enemy')
+        document.getElementById(location).addEventListener('click', (e) => {
+            log(`you did damage`)
+        })
+        
+    });
 
-    // })
 }
 
 

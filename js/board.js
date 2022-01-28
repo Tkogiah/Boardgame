@@ -9,9 +9,10 @@ export const boardSpaces = [];
 
 const board = document.querySelectorAll('.hex');
 
+//EVENTLISTENER TO MAKE MONEY
 board.forEach( e => {
     e.addEventListener('click', function() {
-        if(e.classList.contains('red')) {
+        if(e.classList.contains('red') && e.classList.contains('enemy')) {
             p.playerArray[0].money +=1
             p.displayActivePlayer(0)
         }
