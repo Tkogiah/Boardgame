@@ -1,4 +1,3 @@
-import * as board from './board.js';
 import * as c from './characters.js'
 import * as mr from './movement-range.js'
 import * as p from './playmat.js';

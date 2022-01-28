@@ -1,5 +1,5 @@
 import { log } from './main.js';
-import { highlightRangeArray } from './movement-range.js';
+
 import * as p from './playmat.js'
 
 const board = document.querySelectorAll('.hex');
@@ -51,21 +51,3 @@ board.forEach((element) => {
         element.classList.add('row-zero')
     }
 })
-
-
-function getIncome(location) {
-    if( location >= 1 && location <= 6) {
-         return 1
-    }else if(location >= 7 && location <= 18) {
-        return 2
-    }else if(location >= 19 && location <= 36) {
-        return 3
-    }else if(location >= 37 && location <= 60) {
-        return 4
-    }else if(location >= 61 && location <= 90) {
-        return 5
-    }else {
-        return 0
-    }
-}
-

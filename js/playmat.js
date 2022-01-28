@@ -27,10 +27,20 @@ endTurn.addEventListener('click', function() {
 
 let playerOne = new c.Archer('Julia')
 let playerTwo = new c.Fighter('Marcus')
+let PlayerThree = new c.Thief('Leo')
 let enemyOne = new c.Enemy('goblin')
+let enemyTwo = new c.Enemy('goblin')
+let enemyThree = new c.Enemy('goblin')
+let enemyFour = new c.Enemy('goblin')
+let enemyFive = new c.Enemy('goblin')
+let enemySix = new c.Enemy('goblin')
+let enemySeven = new c.Enemy('goblin')
+let enemyEight = new c.Enemy('goblin')
+let enemyNine = new c.Enemy('goblin')
+let enemyTen = new c.Enemy('goblin')
 
-export let playerArray = [playerOne, playerTwo]
-export let enemyArray = [enemyOne]
+export let playerArray = [playerOne, playerTwo, PlayerThree]
+export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
 
 export function displayActivePlayer(index) {
     if(playerArray[index] === undefined) { 
