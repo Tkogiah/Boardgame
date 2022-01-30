@@ -13,7 +13,7 @@ function $(id) {
 }
 
 let endTurn = $('end')
-let turn = 0
+let turn = 0;
 endTurn.addEventListener('click', function() {
     playerArray.push(playerArray[0])
     playerArray.shift()
