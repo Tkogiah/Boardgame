@@ -127,31 +127,31 @@ export class Demon extends Enemy {
         this.health = 50
     }  
 }
-export class lvlSix extends Enemy {
+export class Behemoth extends Enemy {
     constructor() {
         this.name = ''
         this.health = 60
     }  
 }
-export class lvlSeven extends Enemy {
+export class Leviathan extends Enemy {
     constructor() {
         this.name = ''
         this.health = 70
     }  
 }
-export class lvlEight extends Enemy {
+export class Demigog extends Enemy {
     constructor() {
         this.name = ''
         this.health = 80
     }  
 }
-export class lvlNine extends Enemy {
+export class Dragon extends Enemy {
     constructor() {
         this.name = ''
         this.health = 90
     }  
 }
-export class lvlTen extends Enemy {
+export class Tesserak extends Enemy {
     constructor() {
         this.name = ''
         this.health = 100
