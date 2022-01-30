@@ -1,5 +1,6 @@
 import { log } from './main.js'
 import { highlightRangeArray } from './movement-range.js'
+import * as p from './playmat.js'
 export function $(id) {
     if(typeof id === 'string' || id instanceof String) {
         return document.getElementById(id)
@@ -42,3 +43,17 @@ export function enemyTakesDamage(location, damage) {
 }
 
 
+
+//temporary to build next intermediate packet
+let attack = $('add-attack')
+let move = $('add-movement')
+
+attack.addEventListener('click', function() {
+    p.playerArray[0].attacks += 1
+    p.displayActivePlayer(0)
+})
+
+move.addEventListener('click', function() {
+    p.playerArray[0].movement += 1
+    p.displayActivePlayer(0)
+})

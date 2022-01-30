@@ -15,6 +15,9 @@ function $(id) {
 let endTurn = $('end')
 let turn = 0;
 endTurn.addEventListener('click', function() {
+    playerArray[0].attacks = 0
+    playerArray[0].movement = 0
+    playerArray[0].money = 0
     playerArray.push(playerArray[0])
     playerArray.shift()
     if(playerArray[0]) {
@@ -28,6 +31,7 @@ endTurn.addEventListener('click', function() {
 let playerOne = new c.Archer('Julia')
 let playerTwo = new c.Fighter('Marcus')
 let PlayerThree = new c.Thief('Leo')
+
 let enemyOne = new c.Enemy('goblin')
 let enemyTwo = new c.Enemy('goblin')
 let enemyThree = new c.Enemy('goblin')
@@ -56,7 +60,8 @@ export function displayActivePlayer(index) {
     q.level('level', playerArray[index])
     q.draw('draw', playerArray[index].deck.drawPile)
     q.discard('discard', playerArray[index].deck.discardPile)
-    mr.fillHighlightRangeArray(playerArray[index].range, playerArray[index].location)
+    mr.fillHighlightRangeArray(playerArray[index].range, playerArray[index].attacks, playerArray[index].location)
+    mr.fillHighlightMovementArray(playerArray[index].speed, playerArray[index].movement, playerArray[index].location)
 
 }
 

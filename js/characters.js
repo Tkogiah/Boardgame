@@ -46,7 +46,9 @@ class Player {
         this.name = playerName,
         this.level = 1,
         this.money = 0,
-        this.location = 0,
+        this.location = 35,
+        this.attacks = 0,
+        this.movement = 0,
         this.deck = {
             drawPile:['card one','card one','card one','card one','card one'],
             handPile:['card two', 'card-two', 'card-two','card-two','card-two'],

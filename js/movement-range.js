@@ -129,12 +129,12 @@ function highlightHexes(array, color) {
     array.forEach((e) => {
         if(e <=90 ){
             let hexColor = document.getElementById(e)
-            hexColor.classList.remove('red')
+            hexColor.classList.add(color)
             if(e == array[0]){hexColor.classList.add('blue')}
-            if(hexColor.classList.contains('red') || hexColor.classList.contains('yellow')) {
+            if(hexColor.classList.contains('red') && hexColor.classList.contains('yellow')) {
                 hexColor.classList.add('green')
             }
-            hexColor.classList.add(color)
+            
         }
     })
 }
@@ -144,7 +144,9 @@ function clearHighlightedHexes(color) {
     }
 }
 
-export function fillHighlightRangeArray(range, location) {
+export function fillHighlightRangeArray(range, attacks, location) {
+    clearHighlightedHexes('red')
+    if(attacks < 1) {return}
     highlightRangeArray = []
     if(range >= 10) {
        return highlightHexes(boardHexes(), 'red')   
@@ -157,7 +159,8 @@ export function fillHighlightRangeArray(range, location) {
     fillUp(range, row, column)
     fillDown(range, row, column)
     // highlightRangeArray.sort((a,b) => a-b)
-    clearHighlightedHexes('red')
+    
+    
     highlightHexes(highlightRangeArray, 'red')
     
 }
@@ -165,15 +168,16 @@ export function fillHighlightRangeArray(range, location) {
 
 export let highlightMovementArray = []
 
-export function fillHighlightMovementArray(speed, action, location) {
+export function fillHighlightMovementArray(speed, movement, location) {
     highlightMovementArray = []
-    let beginningPoint = location-speed*action;
-    let endPoint = location+speed*action;
+    let beginningPoint = location-speed*movement;
+    let endPoint = location+speed*movement;
     highlightMovementArray.push(location)
     for (let i = beginningPoint; i<= endPoint; i++) {
         if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
     }
     //highlightMovementArray.sort((a,b) => a-b)
     clearHighlightedHexes('yellow')
+    clearHighlightedHexes('green')
     highlightHexes(highlightMovementArray, 'yellow')
 }
