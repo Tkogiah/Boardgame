@@ -1,5 +1,5 @@
 import { log } from './main.js';
-
+import * as mr from './movement-range.js'
 import * as p from './playmat.js'
 
 const board = document.querySelectorAll('.hex');
@@ -52,3 +52,13 @@ board.forEach((element) => {
         element.classList.add('row-zero')
     }
 })
+
+// board.forEach(e => {
+//     e.addEventListener('click', function() {
+//         if(e.classList.contains('enemy')) {return}
+//         console.log(`hello from the ${e.id} hex`)
+//         p.playerArray[0].location = e.id
+//         mr.clearHighlightedHexes('blue')
+//         p.displayActivePlayer(0)
+//     })
+// })

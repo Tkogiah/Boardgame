@@ -140,7 +140,8 @@ function highlightHexes(array, color) {
 }
 function clearHighlightedHexes(color) {
     for(let i = 0; i <= 90; i++) {
-        document.getElementById(i).classList.remove(color)
+        let hex = document.getElementById(i)
+        hex.classList.remove(color)
     }
 }
 
@@ -159,8 +160,7 @@ export function fillHighlightRangeArray(range, attacks, location) {
     fillUp(range, row, column)
     fillDown(range, row, column)
     // highlightRangeArray.sort((a,b) => a-b)
-    
-    
+    clearHighlightedHexes('red')
     highlightHexes(highlightRangeArray, 'red')
     
 }
