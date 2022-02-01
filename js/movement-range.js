@@ -130,7 +130,6 @@ function highlightHexes(array, color) {
         if(e <=90 ){
             let hexColor = document.getElementById(e)
             hexColor.classList.add(color)
-            if(e == array[0]){hexColor.classList.add('blue')}
             if(hexColor.classList.contains('red') && hexColor.classList.contains('yellow')) {
                 hexColor.classList.add('green')
             }
@@ -138,10 +137,14 @@ function highlightHexes(array, color) {
         }
     })
 }
-function clearHighlightedHexes(color) {
+
+export function clearHighlightedHexes() {
     for(let i = 0; i <= 90; i++) {
         let hex = document.getElementById(i)
-        hex.classList.remove(color)
+        hex.classList.remove('red')
+        hex.classList.remove('yellow')
+        hex.classList.remove('green')
+        
     }
 }
 
@@ -160,7 +163,6 @@ export function fillHighlightRangeArray(range, attacks, location) {
     fillUp(range, row, column)
     fillDown(range, row, column)
     // highlightRangeArray.sort((a,b) => a-b)
-    clearHighlightedHexes('red')
     highlightHexes(highlightRangeArray, 'red')
     
 }
@@ -177,7 +179,5 @@ export function fillHighlightMovementArray(speed, movement, location) {
         if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
     }
     //highlightMovementArray.sort((a,b) => a-b)
-    clearHighlightedHexes('yellow')
-    clearHighlightedHexes('green')
     highlightHexes(highlightMovementArray, 'yellow')
 }

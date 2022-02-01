@@ -27,6 +27,7 @@ board.forEach( e => {
                 p.playerArray[0].money += 0
             }
             p.playerArray[0].attacks -= 1
+            mr.clearHighlightedHexes()
             p.displayActivePlayer(0)
         }
     })
