@@ -54,12 +54,17 @@ board.forEach((element) => {
     }
 })
 
-// board.forEach(e => {
-//     e.addEventListener('click', function() {
-//         if(e.classList.contains('enemy')) {return}
-//         console.log(`hello from the ${e.id} hex`)
-//         p.playerArray[0].location = e.id
-//         mr.clearHighlightedHexes('blue')
-//         p.displayActivePlayer(0)
-//     })
-// })
+board.forEach(e => {
+    e.addEventListener('click', function() {
+        if(e.classList.contains('yellow') && !e.classList.contains('enemy') && p.playerArray[0].movement > 0) {
+            p.playerArray[0].movement -= 1
+            p.playerArray[0].location = e.id
+            let yoyo = document.querySelectorAll('.hex')
+            yoyo.forEach(e => {
+                e.classList.remove('yellow')
+              })
+            p.displayActivePlayer(0)
+        }
+
+    })
+})

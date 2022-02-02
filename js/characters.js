@@ -46,7 +46,7 @@ class Player {
         this.name = playerName,
         this.level = 1,
         this.money = 0,
-        this.location = 35,
+        this.location = 0,
         this.attacks = 0,
         this.movement = 0,
         this.deck = {

@@ -130,6 +130,7 @@ function highlightHexes(array, color) {
         if(e <=90 ){
             let hexColor = document.getElementById(e)
             hexColor.classList.add(color)
+            if(e == array[0]) {hexColor.classList.add('blue')}
             if(hexColor.classList.contains('red') && hexColor.classList.contains('yellow')) {
                 hexColor.classList.add('green')
             }
@@ -144,12 +145,13 @@ export function clearHighlightedHexes() {
         hex.classList.remove('red')
         hex.classList.remove('yellow')
         hex.classList.remove('green')
+        hex.classList.remove('blue')
         
     }
 }
 
 export function fillHighlightRangeArray(range, attacks, location) {
-    clearHighlightedHexes('red')
+   
     if(attacks < 1) {return}
     highlightRangeArray = []
     if(range >= 10) {
@@ -168,16 +170,20 @@ export function fillHighlightRangeArray(range, attacks, location) {
 }
 
 
-export let highlightMovementArray = []
 
 export function fillHighlightMovementArray(speed, movement, location) {
-    highlightMovementArray = []
-    let beginningPoint = location-speed*movement;
-    let endPoint = location+speed*movement;
+    let highlightMovementArray = []
+    let beginningPoint = parseInt(location)-parseInt(speed)*parseInt(movement)
+    let endPoint = parseInt(location)+parseInt(speed)*parseInt(movement);
     highlightMovementArray.push(location)
+   
     for (let i = beginningPoint; i<= endPoint; i++) {
-        if(i >= 0 && i != location) {highlightMovementArray.push(i)}    
+
+        if(i >= 0 && i != location && i <= endPoint) {
+            highlightMovementArray.push(i)
+        }    
     }
     //highlightMovementArray.sort((a,b) => a-b)
     highlightHexes(highlightMovementArray, 'yellow')
 }
+

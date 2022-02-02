@@ -43,7 +43,7 @@ let enemyEight = new c.Enemy('goblin')
 let enemyNine = new c.Enemy('goblin')
 let enemyTen = new c.Enemy('goblin')
 
-export let playerArray = [playerOne, playerTwo, PlayerThree]
+export let playerArray = [PlayerThree, playerOne, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
 
 export function displayActivePlayer(index) {
@@ -61,6 +61,7 @@ export function displayActivePlayer(index) {
     q.draw('draw', playerArray[index].deck.drawPile)
     q.discard('discard', playerArray[index].deck.discardPile)
     mr.clearHighlightedHexes()
+    
     mr.fillHighlightRangeArray(playerArray[index].range, playerArray[index].attacks, playerArray[index].location)
     mr.fillHighlightMovementArray(playerArray[index].speed, playerArray[index].movement, playerArray[index].location)
 
