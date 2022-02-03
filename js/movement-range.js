@@ -173,8 +173,8 @@ export function fillHighlightRangeArray(range, attacks, location) {
 
 export function fillHighlightMovementArray(speed, movement, location) {
     let highlightMovementArray = []
-    let beginningPoint = parseInt(location)-parseInt(speed)*parseInt(movement)
-    let endPoint = parseInt(location)+parseInt(speed)*parseInt(movement);
+    let beginningPoint = parseInt(location)-parseInt(movement)
+    let endPoint = parseInt(location)+parseInt(movement);
     highlightMovementArray.push(location)
    
     for (let i = beginningPoint; i<= endPoint; i++) {
