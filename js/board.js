@@ -57,7 +57,7 @@ board.forEach((element) => {
 board.forEach(e => {
     e.addEventListener('click', function() {
         if(e.classList.contains('yellow') && !e.classList.contains('enemy') && p.playerArray[0].movement > 0) {
-            p.playerArray[0].movement -= 1
+            p.playerArray[0].movement -= Math.abs(p.playerArray[0].location - e.id)
             p.playerArray[0].location = e.id
             let yoyo = document.querySelectorAll('.hex')
             yoyo.forEach(e => {
