@@ -54,6 +54,6 @@ attack.addEventListener('click', function() {
 })
 
 move.addEventListener('click', function() {
-    p.playerArray[0].movement = p.playerArray[0].speed * 1
+    p.playerArray[0].movement += p.playerArray[0].speed * 1
     p.displayActivePlayer(0)
 })
