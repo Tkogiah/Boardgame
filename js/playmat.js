@@ -67,10 +67,16 @@ export function displayActivePlayer(index) {
 
 }
 
+
+
 export function displayActiveEnemies(enemiesArray) {
     enemiesArray.forEach(element => {
+        let enemyMovement = Math.floor(Math.random() * 10) + 1
+        log(enemyMovement)
+        element.location -= enemyMovement
+        log(element.location)
         document.getElementById(element.location).classList.add('enemy')
-        document.getElementById(location).addEventListener('click', (e) => {
+        document.getElementById(element.location).addEventListener('click', (e) => {
             log(`you did damage`)
         })
         

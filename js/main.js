@@ -11,3 +11,4 @@ export function log(a) {
 
 
 p.displayActivePlayer(0)
+p.displayActiveEnemies(p.enemyArray)
