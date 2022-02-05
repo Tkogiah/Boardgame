@@ -2,6 +2,7 @@ import { log } from "./main.js";
 import * as q from './querySelectors.js'
 import * as c from './characters.js'
 import * as mr from './movement-range.js'
+import * as b from './board.js'
 
 function $(id) {
     if(typeof id === 'string' || id instanceof String) {
@@ -24,6 +25,7 @@ endTurn.addEventListener('click', function() {
         log(playerArray[0])
     }
     displayActivePlayer(0)
+    displayActiveEnemies(enemyArray)
 })
 
 
@@ -47,10 +49,11 @@ export let playerArray = [PlayerThree, playerOne, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
 
 export function displayActivePlayer(index) {
-    if(playerArray[index] === undefined) { 
-        index = 0;
-        runEnemyTurn()
-    }
+    log(playerArray[index])
+    // if(playerArray[index] === undefined) { 
+    //     index = 0;
+    //     displayActiveEnemies(enemyArray)
+    // }
     q.name('name', playerArray[index])
     q.damage('damage', playerArray[index])
     q.range('range', playerArray[index])
@@ -70,11 +73,10 @@ export function displayActivePlayer(index) {
 
 
 export function displayActiveEnemies(enemiesArray) {
+    b.removeEnemyColor()
     enemiesArray.forEach(element => {
         let enemyMovement = Math.floor(Math.random() * 10) + 1
-        log(enemyMovement)
         element.location -= enemyMovement
-        log(element.location)
         document.getElementById(element.location).classList.add('enemy')
         document.getElementById(element.location).addEventListener('click', (e) => {
             log(`you did damage`)

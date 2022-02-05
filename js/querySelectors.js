@@ -43,7 +43,6 @@ export function enemyTakesDamage(location, damage) {
 }
 
 
-
 //temporary to build next intermediate packet
 let attack = $('add-attack')
 let move = $('add-movement')

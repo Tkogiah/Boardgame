@@ -68,3 +68,9 @@ board.forEach(e => {
 
     })
 })
+
+export function removeEnemyColor() {
+    board.forEach(e => {
+        e.classList.remove('enemy')
+    })
+}
