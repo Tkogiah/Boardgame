@@ -4,7 +4,7 @@ import * as p from './playmat.js'
 
 const board = document.querySelectorAll('.hex');
 
-//EVENTLISTENER TO MAKE MONEY
+//EVENTLISTENER TO MAKE MONEY && damage enemy
 board.forEach( e => {
     e.addEventListener('click', function() {
         if(e.classList.contains('red') && e.classList.contains('enemy') && p.playerArray[0].attacks > 0) {

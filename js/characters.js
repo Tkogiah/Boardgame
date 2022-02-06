@@ -101,6 +101,7 @@ export class Enemy {
 }
 export class Goblin extends Enemy {
     constructor() {
+        super()
         this.name = 'Goblin'
         this.health = 10
     }  

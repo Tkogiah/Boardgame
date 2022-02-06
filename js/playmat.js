@@ -34,16 +34,16 @@ let playerOne = new c.Archer('Julia')
 let playerTwo = new c.Fighter('Marcus')
 let PlayerThree = new c.Thief('Leo')
 
-let enemyOne = new c.Enemy('goblin')
-let enemyTwo = new c.Enemy('goblin')
-let enemyThree = new c.Enemy('goblin')
-let enemyFour = new c.Enemy('goblin')
-let enemyFive = new c.Enemy('goblin')
-let enemySix = new c.Enemy('goblin')
-let enemySeven = new c.Enemy('goblin')
-let enemyEight = new c.Enemy('goblin')
-let enemyNine = new c.Enemy('goblin')
-let enemyTen = new c.Enemy('goblin')
+let enemyOne = new c.Goblin()
+let enemyTwo = new c.Goblin()
+let enemyThree = new c.Goblin()
+let enemyFour = new c.Goblin()
+let enemyFive = new c.Goblin()
+let enemySix = new c.Goblin()
+let enemySeven = new c.Goblin()
+let enemyEight = new c.Goblin()
+let enemyNine = new c.Goblin()
+let enemyTen = new c.Goblin()
 
 export let playerArray = [PlayerThree, playerOne, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
@@ -77,7 +77,9 @@ export function displayActiveEnemies(enemiesArray) {
     enemiesArray.forEach(element => {
         let enemyMovement = Math.floor(Math.random() * 10) + 1
         element.location -= enemyMovement
+        
         document.getElementById(element.location).classList.add('enemy')
+        document.getElementById(element.location).classList.add(`${element.health}`)
         document.getElementById(element.location).addEventListener('click', (e) => {
             log(`you did damage`)
         })
