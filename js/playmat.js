@@ -88,9 +88,17 @@ export function displayActiveEnemies(enemiesArray) {
 
 }
 
+//.player-stats, .enemy-stats
 
+const activeEnemies = $('game-stats')
 
+// enemyArray.forEach(element => {
+    
+// })
 
+let enemy = document.createElement('div')
+enemy.classList.add('enemy-stats')
+activeEnemies.appendChild(enemy)
 
 
 
@@ -166,7 +174,7 @@ export function displayActiveEnemies(enemiesArray) {
 
 
 
-//OLD CODE
+
 // //PLAYMAT MIDDLE FUNCTIONS TO CREATE AND UPDATE NODES FOR PLAYERS AND ENEMIES
 // let numberOfPlayers = 0 
 // function setPlayerName(name) {
