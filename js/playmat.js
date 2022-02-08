@@ -64,10 +64,9 @@ export function displayActivePlayer(index) {
     q.draw('draw', playerArray[index].deck.drawPile)
     q.discard('discard', playerArray[index].deck.discardPile)
     mr.clearHighlightedHexes()
-    
     mr.fillHighlightRangeArray(playerArray[index].range, playerArray[index].attacks, playerArray[index].location)
     mr.fillHighlightMovementArray(playerArray[index].speed, playerArray[index].movement, playerArray[index].location)
-
+    
 }
 
 
@@ -85,7 +84,7 @@ export function displayActiveEnemies(enemiesArray) {
         })
         
     });
-
+    
 }
 
 //middle playmat display screen
