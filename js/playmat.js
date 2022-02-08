@@ -26,9 +26,9 @@ endTurn.addEventListener('click', function() {
     }
     displayActivePlayer(0)
     displayActiveEnemies(enemyArray)
+    displayActive()
+    
 })
-
-
 
 let playerOne = new c.Archer('Julia')
 let playerTwo = new c.Fighter('Marcus')
@@ -49,7 +49,7 @@ export let playerArray = [PlayerThree, playerOne, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
 
 export function displayActivePlayer(index) {
-    log(playerArray[index])
+    
     // if(playerArray[index] === undefined) { 
     //     index = 0;
     //     displayActiveEnemies(enemyArray)
@@ -77,7 +77,7 @@ export function displayActiveEnemies(enemiesArray) {
     enemiesArray.forEach(element => {
         let enemyMovement = Math.floor(Math.random() * 10) + 1
         element.location -= enemyMovement
-        
+        if(element.location < 1) { element.location = 0}        
         document.getElementById(element.location).classList.add('enemy')
         document.getElementById(element.location).classList.add(`${element.health}`)
         document.getElementById(element.location).addEventListener('click', (e) => {
@@ -88,17 +88,84 @@ export function displayActiveEnemies(enemiesArray) {
 
 }
 
-//.player-stats, .enemy-stats
+//middle playmat display screen
 
-const activeEnemies = $('game-stats')
+const activeScreen = $('game-stats')
+const activeButton = $('active')
+const activePlayers = $('players')
+const activeEnemies = $('enemies')
 
-// enemyArray.forEach(element => {
-    
-// })
+activeButton.addEventListener('click', function() {
+    displayActive()
+})
 
-let enemy = document.createElement('div')
-enemy.classList.add('enemy-stats')
-activeEnemies.appendChild(enemy)
+function displayActive() {
+    activeScreen.innerHTML = ''
+}
+
+activePlayers.addEventListener('click', function() {
+    displayPlayers()
+})
+
+function displayPlayers() {
+    activeScreen.innerHTML = ''
+    playerArray.forEach(element => {
+        let player = document.createElement('div')
+        let playerName = document.createElement('div')
+        let playerLocation = document.createElement('div')
+        let playerDamage = document.createElement('div')
+        let playerSpeed = document.createElement('div')
+        let playerRange = document.createElement('div')
+        player.classList.add('player-stats')
+        playerName.classList.add('player-stat-width')
+        playerLocation.classList.add('player-stat-width')
+        playerDamage.classList.add('player-stat-width')
+        playerSpeed.classList.add('player-stat-width')
+        playerRange.classList.add('player-stat-width')
+        playerName.innerText = `Name: ${element.name}`;
+        playerLocation.innerText = `Location: ${element.location}`;
+        playerDamage.innerText = `Damage: ${element.damage}`
+        playerSpeed.innerText = `Speed: ${element.speed}`
+        playerRange.innerText = `Range: ${element.range}`
+        player.appendChild(playerName)
+        player.appendChild(playerLocation)
+        player.appendChild(playerDamage)
+        player.appendChild(playerSpeed)
+        player.appendChild(playerRange)
+        activeScreen.appendChild(player)
+        
+    })
+}
+
+activeEnemies.addEventListener('click', function() {
+    displayEnemies()
+})
+
+function displayEnemies() {
+    activeScreen.innerHTML = ''
+    enemyArray.forEach(element => {
+        let enemy = document.createElement('div')
+        let enemyName = document.createElement('div')
+        let enemyLocation = document.createElement('div')
+        let enemyHealth = document.createElement('div')
+        enemy.classList.add('enemy-stats')
+        enemyName.classList.add('enemy-stat-width')
+        enemyLocation.classList.add('enemy-stat-width')
+        enemyHealth.classList.add('enemy-stat-width')
+        enemyName.innerText = `Name: ${element.name}`
+        enemyLocation.innerText = `Location: ${element.location}`
+        enemyHealth.innerText = `Health: ${element.health}`
+        enemy.appendChild(enemyName)
+        enemy.appendChild(enemyLocation)
+        enemy.appendChild(enemyHealth)
+        activeScreen.appendChild(enemy)
+     })
+}
+
+
+
+
+
 
 
 

@@ -391,11 +391,12 @@ body {
   background-color: rgba(255, 255, 255, 0.555);
 }
 
-.right-of-board .middle .player-stats, .right-of-board .middle .enemy-stats {
+.right-of-board .middle .player-stats {
   width: 100%;
-  height: 6.5%;
+  height: 12%;
   border-bottom: 1px solid black;
   text-align: left;
+  padding-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,16 +405,42 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.right-of-board .middle .player-stats .stat-width, .right-of-board .middle .enemy-stats .stat-width {
-  width: 25%;
+.right-of-board .middle .player-stats .player-stat-width {
+  width: 20%;
+}
+
+.right-of-board .middle .enemy-stats {
+  width: 100%;
+  height: 9.85%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .middle .enemy-stats .enemy-stat-width {
+  width: 33%;
 }
 
 .right-of-board .bottom {
@@ -543,14 +570,32 @@ body {
   border: 2px solid black;
   border-radius: 5px;
   background-color: rgba(120, 0, 0, 0.637);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.right-of-board .bottom .board-details .show-ally {
+.right-of-board .bottom .board-details .show-player {
   font-size: 16px;
   margin: 3px;
   border: 2px solid black;
   border-radius: 5px;
   background-color: rgba(0, 120, 104, 0.637);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .right-of-board .bottom .board-details .active {
