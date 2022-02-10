@@ -100,6 +100,30 @@ activeButton.addEventListener('click', function() {
 
 function displayActive() {
     activeScreen.innerHTML = ''
+    let allArray = []
+    for(let i=0;i<playerArray.length; i++) {
+        allArray.push(playerArray[i])
+    }
+    for(let i=0;i<enemyArray.length; i++) {
+        allArray.push(enemyArray[i])
+    }
+    enemyArray.forEach(element => {
+        let character = document.createElement('div')
+        let characterName = document.createElement('div')
+        let characterLocation = document.createElement('div')
+        let characterType = document.createElement('div')
+        character.classList.add('all-stats')
+        characterName.classList.add('all-stat-width')
+        characterLocation.classList.add('all-stat-width')
+        characterType.classList.add('all-stat-width')
+        characterName.innerText = `Name: ${element.name}`
+        characterLocation.innerText = `Location: ${element.location}`
+        characterType.innerText = `Type: ${element.type}`
+        character.appendChild(characterName)
+        character.appendChild(characterLocation)
+        character.appendChild(characterType)
+        activeScreen.appendChild(character)
+     })
 }
 
 activePlayers.addEventListener('click', function() {
@@ -160,7 +184,6 @@ function displayEnemies() {
         activeScreen.appendChild(enemy)
      })
 }
-
 
 
 

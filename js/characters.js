@@ -44,6 +44,7 @@ export function enemyTakesDamage(location, damage) {
 class Player {
     constructor(playerName) {
         this.name = playerName,
+        this.type = 'player',
         this.level = 1,
         this.money = 0,
         this.location = 0,
@@ -95,8 +96,10 @@ export class Thief extends Player {
 
 export class Enemy {
     constructor() {
+        this.type = 'enemy',
         this.location = 90,
         this.speed = 1
+
     }   
 }
 export class Goblin extends Enemy {

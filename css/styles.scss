@@ -255,7 +255,22 @@ body {
             
             
         }
-
+        .all-stats {
+            width: 99%;
+            height: 6%;
+            border-bottom: 1px solid black;
+            text-align: left;
+            padding-left: 10px;
+            display: flex;
+            color: black;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+          
+            .all-stat-width {
+                width: 33%;
+            }
+        } 
     }
     
 
