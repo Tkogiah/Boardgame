@@ -101,13 +101,9 @@ activeButton.addEventListener('click', function() {
 function displayActive() {
     activeScreen.innerHTML = ''
     let allArray = []
-    for(let i=0;i<playerArray.length; i++) {
-        allArray.push(playerArray[i])
-    }
-    for(let i=0;i<enemyArray.length; i++) {
-        allArray.push(enemyArray[i])
-    }
-    enemyArray.forEach(element => {
+    for(let i=0;i<playerArray.length; i++) { allArray.push(playerArray[i]) }
+    for(let i=0;i<enemyArray.length; i++) { allArray.push(enemyArray[i]) }
+    allArray.forEach(element => {
         let character = document.createElement('div')
         let characterName = document.createElement('div')
         let characterLocation = document.createElement('div')
