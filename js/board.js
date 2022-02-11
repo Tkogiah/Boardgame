@@ -26,7 +26,8 @@ board.forEach( e => {
             else {
                 p.playerArray[0].money += 0
             }
-            
+           
+            p.takeDamage(e.id)
             p.playerArray[0].attacks -= 1
             mr.clearHighlightedHexes()
             p.displayActivePlayer(0)

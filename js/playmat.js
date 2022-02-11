@@ -171,7 +171,7 @@ function displayEnemies() {
         enemyName.classList.add('enemy-stat-width')
         enemyLocation.classList.add('enemy-stat-width')
         enemyHealth.classList.add('enemy-stat-width')
-        enemyName.innerText = `Name: ${element.name}`
+        enemyName.innerText = `Name: ${element.name} ${enemyArray.indexOf(element)}`
         enemyLocation.innerText = `Location: ${element.location}`
         enemyHealth.innerText = `Health: ${element.health}`
         enemy.appendChild(enemyName)
@@ -183,7 +183,69 @@ function displayEnemies() {
 
 
 
-function takeDamage(hex) {}
+export function takeDamage(hex) {
+    let redisplay = activeScreen.innerHTML
+    activeScreen.innerHTML = ''
+    let modal = document.createElement('div')
+    modal.classList.add('take-damage')
+    modal.innerText = 'There are multiple enemies here. Which one?'
+    activeScreen.appendChild(modal)
+    log(hex)
+    let count = 0
+    enemyArray.forEach(e => {
+        
+        if(e.location == hex)
+        count+=1  
+
+    })
+
+    if(count > 1) {
+        enemyArray.forEach(e => {
+            if(e.location == hex) {
+                let modalOption = document.createElement('div')
+                modalOption.classList.add('modal-option')
+                modalOption.innerText = `this one? ${e.name} - ${e.health} health`
+                modal.appendChild(modalOption)
+                modalOption.addEventListener('click', function() {
+                    e.health = e.health - playerArray[0].damage
+                    if(e.health <= 0) {
+                        enemyArray.splice(enemyArray[e-1], 1)
+                    }
+                    activeScreen.removeChild(modal)
+                })
+            }
+
+            
+        }) 
+    }
+    else {
+        enemyArray.forEach(e => {
+            log(e)
+            if(e.location == hex) {
+                e.health = e.health - playerArray[0].damage
+                if(e.health <= 0) {
+                    log(e)
+                    enemyArray.splice(enemyArray.indexOf(e), 1)
+                }
+                activeScreen.removeChild(modal) 
+            }
+            
+        })
+        
+    }
+    activeScreen.innerHTML = redisplay;
+    displayEnemies()
+}
+
+
+
+
+
+
+
+
+
+
 //take in hex number
 //traverse thru enemyarray and push all index.location that == hex into new array
 //if new array.length > 1
