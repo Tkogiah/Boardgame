@@ -183,7 +183,7 @@ function displayEnemies() {
 
 
 
-function takeDamage(hex)
+function takeDamage(hex) {}
 //take in hex number
 //traverse thru enemyarray and push all index.location that == hex into new array
 //if new array.length > 1
