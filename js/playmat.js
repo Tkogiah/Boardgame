@@ -183,8 +183,13 @@ function displayEnemies() {
 
 
 
-
-
+function takeDamage(hex)
+//take in hex number
+//traverse thru enemyarray and push all index.location that == hex into new array
+//if new array.length > 1
+    //return function that displays an option modal
+        //receives a number that correlates to an index of new array based on EL on option modal
+//reduce player.damage from 
 
 
 
