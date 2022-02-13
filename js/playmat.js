@@ -45,7 +45,7 @@ let enemyEight = new c.Goblin()
 let enemyNine = new c.Goblin()
 let enemyTen = new c.Goblin()
 
-export let playerArray = [PlayerThree, playerOne, playerTwo]
+export let playerArray = [playerOne, PlayerThree, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
 
 export function displayActivePlayer(index) {
@@ -184,7 +184,6 @@ function displayEnemies() {
 
 
 export function takeDamage(hex) {
-    let redisplay = activeScreen.innerHTML
     activeScreen.innerHTML = ''
     let modal = document.createElement('div')
     modal.classList.add('take-damage')
@@ -193,12 +192,8 @@ export function takeDamage(hex) {
     log(hex)
     let count = 0
     enemyArray.forEach(e => {
-        
-        if(e.location == hex)
-        count+=1  
-
+        if(e.location == hex) { count+=1 }   
     })
-
     if(count > 1) {
         enemyArray.forEach(e => {
             if(e.location == hex) {
@@ -209,6 +204,8 @@ export function takeDamage(hex) {
                 modalOption.addEventListener('click', function() {
                     e.health = e.health - playerArray[0].damage
                     if(e.health <= 0) {
+                        let hexRemoval = document.getElementById(e.location)
+                        hexRemoval.classList.remove('enemy')
                         enemyArray.splice(enemyArray[e-1], 1)
                     }
                     activeScreen.removeChild(modal)
@@ -216,7 +213,8 @@ export function takeDamage(hex) {
             }
 
             
-        }) 
+        })
+        displayEnemies() 
     }
     else {
         enemyArray.forEach(e => {
@@ -224,8 +222,10 @@ export function takeDamage(hex) {
             if(e.location == hex) {
                 e.health = e.health - playerArray[0].damage
                 if(e.health <= 0) {
-                    log(e)
+                    let hexRemoval = document.getElementById(e.location)
+                    hexRemoval.classList.remove('enemy')
                     enemyArray.splice(enemyArray.indexOf(e), 1)
+                    
                 }
                 activeScreen.removeChild(modal) 
             }
@@ -233,7 +233,6 @@ export function takeDamage(hex) {
         })
         
     }
-    activeScreen.innerHTML = redisplay;
     displayEnemies()
 }
 
