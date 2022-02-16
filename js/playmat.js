@@ -203,8 +203,6 @@ export function takeDamage(hex) {
                 modalOption.addEventListener('click', function() {
                     e.health = e.health - playerArray[0].damage
                     if(e.health <= 0) {
-                        let hexRemoval = document.getElementById(e.location)
-                        hexRemoval.classList.remove('enemy')
                         enemyArray.splice(enemyArray.indexOf(e), 1)
                     }
                     activeScreen.removeChild(modal)
