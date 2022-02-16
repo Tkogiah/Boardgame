@@ -189,7 +189,6 @@ export function takeDamage(hex) {
     modal.classList.add('take-damage')
     modal.innerText = 'There are multiple enemies here. Which one?'
     activeScreen.appendChild(modal)
-    log(hex)
     let count = 0
     enemyArray.forEach(e => {
         if(e.location == hex) { count+=1 }   
@@ -206,15 +205,16 @@ export function takeDamage(hex) {
                     if(e.health <= 0) {
                         let hexRemoval = document.getElementById(e.location)
                         hexRemoval.classList.remove('enemy')
-                        enemyArray.splice(enemyArray[e-1], 1)
+                        enemyArray.splice(enemyArray.indexOf(e), 1)
                     }
                     activeScreen.removeChild(modal)
+                    displayEnemies()
                 })
             }
 
             
         })
-        displayEnemies() 
+         
     }
     else {
         enemyArray.forEach(e => {
@@ -231,9 +231,9 @@ export function takeDamage(hex) {
             }
             
         })
-        
+    displayEnemies()    
     }
-    displayEnemies()
+    
 }
 
 
