@@ -208,11 +208,8 @@ export function takeDamage(hex) {
                     activeScreen.removeChild(modal)
                     displayEnemies()
                 })
-            }
-
-            
-        })
-         
+            }   
+        })     
     }
     else {
         enemyArray.forEach(e => {
@@ -222,16 +219,13 @@ export function takeDamage(hex) {
                 if(e.health <= 0) {
                     let hexRemoval = document.getElementById(e.location)
                     hexRemoval.classList.remove('enemy')
-                    enemyArray.splice(enemyArray.indexOf(e), 1)
-                    
+                    enemyArray.splice(enemyArray.indexOf(e), 1) 
                 }
                 activeScreen.removeChild(modal) 
             }
-            
         })
     displayEnemies()    
     }
-    
 }
 
 
