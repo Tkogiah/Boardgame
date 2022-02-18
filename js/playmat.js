@@ -76,7 +76,10 @@ export function displayActiveEnemies(enemiesArray) {
     enemiesArray.forEach(element => {
         let enemyMovement = Math.floor(Math.random() * 10) + 1
         element.location -= enemyMovement
-        if(element.location < 1) { element.location = 0}        
+        if(element.location < 1) { 
+            element.location = 0
+            log('you lose')
+        }        
         document.getElementById(element.location).classList.add('enemy')
         document.getElementById(element.location).classList.add(`${element.health}`)
         document.getElementById(element.location).addEventListener('click', (e) => {
@@ -85,6 +88,12 @@ export function displayActiveEnemies(enemiesArray) {
         
     });
     
+}
+function playersLose() {
+    let modal = document.createElement('div')
+    modal.classList.add('players-lose')
+    modal.innerText = 'The hoards have prevailed against your prowess. The Kingdom is lost!'
+    document.appendChild(modal)
 }
 
 //middle playmat display screen

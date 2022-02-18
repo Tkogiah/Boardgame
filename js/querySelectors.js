@@ -38,9 +38,7 @@ export function discard(id, index) {
 }
 
 
-export function enemyTakesDamage(location, damage) {
-     
-}
+
 
 
 //temporary to build next intermediate packet
