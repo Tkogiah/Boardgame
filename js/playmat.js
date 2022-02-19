@@ -96,8 +96,15 @@ function playersLose() {
     let modal = document.createElement('div')
     modal.classList.add('players-lose')
     modal.innerText = 'The hoards have prevailed against your prowess. The Kingdom is lost!'
+    let restart = document.createElement('div')
+    restart.classList.add('restart')
+    restart.innerText = 'RESTART'
+    restart.addEventListener('click', function() {
+        window.location.reload(true)
+    })
+    modal.appendChild(restart)
     activeScreen.appendChild(modal)
-    
+
 }
 
 //middle playmat display screen

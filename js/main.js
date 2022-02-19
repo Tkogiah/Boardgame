@@ -9,6 +9,6 @@ export function log(a) {
     console.log(a)
 }
 
-
+window.onload = log('game start')
 p.displayActivePlayer(0)
 p.displayActiveEnemies(p.enemyArray)
