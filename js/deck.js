@@ -19,6 +19,14 @@ class Card {
         this.title = title
     }
 }
+
+class Action extends Card {
+    constructor(name)
+    super(title)
+    this
+}
+
+
 // class Orb extends Card {
 //     trade: function(),
 //     case1: 'stores money outside of discard pile',
