@@ -34,7 +34,25 @@ body {
   }
 
 
+//OPENING MODAL
+  .start {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
+      .side-by-side {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 80%;
+          height: auto;
+          color: white;
+          font-size: 25px;
+          padding-bottom: 5px;
+      }
+  }
 
 //HEXBOARD
   #hexboard {
