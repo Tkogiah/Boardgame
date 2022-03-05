@@ -9,6 +9,6 @@ export function log(a) {
     console.log(a)
 }
 
-window.onload = log('game start')
+window.onload = gameStart.gstart()
 p.displayActivePlayer(0)
 p.displayActiveEnemies(p.enemyArray)
