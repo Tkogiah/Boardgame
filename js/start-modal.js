@@ -23,6 +23,7 @@ export function setInMotion() {
     let goButton = document.getElementById('go-button')
     goButton.addEventListener('click', function() {
         if(!numberOfPlayers.value || numberOfPlayers.value > 3) { return }
+        startModal.removeChild(textBox)
         let playerTotal = numberOfPlayers.value
         log(playerTotal)
         let chooseCharacter = document.createElement('div')
