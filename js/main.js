@@ -10,5 +10,5 @@ export function log(a) {
 }
 
 window.onload = gameStart.setInMotion
-p.displayActivePlayer(0)
-p.displayActiveEnemies(p.enemyArray)
+// p.displayActivePlayer(0)
+// p.displayActiveEnemies(p.enemyArray)

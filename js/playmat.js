@@ -31,23 +31,29 @@ endTurn.addEventListener('click', function() {
     
 })
 
-let playerOne = new c.Archer('Julia')
-let playerTwo = new c.Fighter('Marcus')
-let PlayerThree = new c.Thief('Leo')
+export let playerOne = new c.Archer('Julia')
+export let playerTwo = new c.Fighter('Marcus')
+export let PlayerThree = new c.Thief('Leo')
 
-let enemyOne = new c.Goblin()
-let enemyTwo = new c.Goblin()
-let enemyThree = new c.Goblin()
-let enemyFour = new c.Goblin()
-let enemyFive = new c.Goblin()
-let enemySix = new c.Goblin()
-let enemySeven = new c.Goblin()
-let enemyEight = new c.Goblin()
-let enemyNine = new c.Goblin()
-let enemyTen = new c.Goblin()
+export let enemyOne = new c.Goblin()
+export let enemyTwo = new c.Goblin()
+export let enemyThree = new c.Goblin()
+export let enemyFour = new c.Goblin()
+export let enemyFive = new c.Goblin()
+export let enemySix = new c.Goblin()
+export let enemySeven = new c.Goblin()
+export let enemyEight = new c.Goblin()
+export let enemyNine = new c.Goblin()
+export let enemyTen = new c.Goblin()
 
+//before starting modal was added (remove once starting modal is working)
+/* 
 export let playerArray = [playerOne, PlayerThree, playerTwo]
 export let enemyArray = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive, enemySix, enemySeven, enemyEight, enemyNine, enemyTen]
+*/
+//after starting modal was added
+export let playerArray = []
+export let enemyArray = []
 
 export function displayActivePlayer(index) {
     
