@@ -64,10 +64,10 @@ export class Archer extends Player {
     constructor(name) {
         super(name)
         this.playerClass = Archer;
-        this.speed = 3,
+        this.speed = 2,
         this.range = 5,
         this.picture = '/assets/Archer.jpg', 
-        this.damage = 2
+        this.damage = 3
     }
 }
 export class Fighter extends Player {

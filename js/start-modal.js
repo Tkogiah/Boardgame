@@ -6,7 +6,7 @@ const startModal = document.getElementById('start-game')
 let textBox = document.createElement('div')
 textBox.innerHTML = `
 <div class="side-by-side">
-    <label class='space' for="numplayers">How many players do you have?</label>
+    <label class='space' for="numplayers" style='padding-right: 10px;'>How many players do you have?</label>
     <input id='numplayers'>
     <input id='go-button' type="submit" value='Go!'>
 </div>
@@ -35,34 +35,29 @@ export function setInMotion() {
         chooseCharacter.innerHTML = `
         <div class="side-by-side">
             <div class='space' for="numplayers">Player 1 Choose your character</div>
-                <div style='
-                    min-width: 100px; 
-                    min-height: 100px; 
-                    background-color: white;
-                    border: 2px solid black;
-                    border-radius: 10px;
-                    '>
+                <div id='archer' class='choose-your-character archer'>
+                    <p>ARCHER</p>
+                    <p>range:5</p>
+                    <p>damage:3</p>
+                    <p>speed:2</p>
+                </div>
+                
+                <div id='thief' class='choose-your-character thief'>
+                    <p>THIEF</p>
+                    <p>range:3</p>
+                    <p>damage:2</p>
+                    <p>speed:5</p>
                 </div>
 
-                <div style='
-                    min-width: 100px; 
-                    min-height: 100px; 
-                    background-color: white;
-                    border: 2px solid black;
-                    border-radius: 10px;
-                    '>
-                </div>
-
-                <div style='
-                    min-width: 100px; 
-                    min-height: 100px; 
-                    background-color: white;
-                    border: 2px solid black;
-                    border-radius: 10px;
-                    '>
+                <div id='fighter' class='choose-your-character fighter'>
+                    <p>FIGHTER</p>
+                    <p>range:2</p>
+                    <p>damage:5</p>
+                    <p>speed:3</p>
                 </div>
         </div>
         `
+
         startModal.appendChild(chooseCharacter)
     })
 }
