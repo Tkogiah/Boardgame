@@ -6,8 +6,8 @@ const startModal = document.getElementById('start-game')
 
 let textBox = document.createElement('div')
 textBox.innerHTML = `
-<div class="side-by-side">
-    <p id='starting-player-text'></p>
+<div id='side-by-side' class="side-by-side">
+    
     <div class='space' for="numplayers">
         <div id='archer' class='choose-your-character archer'>
             <p>ARCHER</p>
@@ -38,17 +38,62 @@ textBox.innerHTML = `
 
 
 export function setInMotion() {
-    let startingPlayerText = document.getElementById('starting-player-text');
-    
     startModal.classList.remove('hidden')
     startModal.appendChild(textBox)
+    
+    let sideBySide = document.getElementById('side-by-side');
+    let startingPlayerText = document.createElement('p');
+    let playerBeginningCount = 1
+    startingPlayerText.innerText = `Player ${playerBeginningCount} choose your character`
+    sideBySide.insertBefore(startingPlayerText, sideBySide.firstChild)
+    
     let chooseArcher = document.getElementById('archer')
     let chooseThief = document.getElementById('thief')
     let chooseFighter = document.getElementById('fighter')
-    chooseArcher.addEventListener('click', function() {
-        log('hello from the console')
-        p.playerArray.push(p.playerOne)
 
+    let startGameButton = document.createElement('div')
+    startGameButton.classList.add('start-game-button')
+    startGameButton.innerText = 'Ready?'
+    sideBySide.appendChild(startGameButton)
+
+    chooseArcher.addEventListener('click', function() {
+        p.playerArray.push(p.playerArcher)
+        document.getElementById('archer').classList.add('hidden')
+        if(playerBeginningCount < 3) {
+            playerBeginningCount += 1
+        }
+        else {
+            startingPlayerText.classList.add('hidden')
+        }
+        startingPlayerText.innerHTML = `Player ${playerBeginningCount} choose your character`
+    })
+
+    chooseThief.addEventListener('click', function() {
+        p.playerArray.push(p.PlayerThief)
+        document.getElementById('thief').classList.add('hidden')
+        if(playerBeginningCount < 3) {
+            playerBeginningCount += 1
+        }
+        else {
+            startingPlayerText.classList.add('hidden')
+        }
+        startingPlayerText.innerHTML = `Player ${playerBeginningCount} choose your character`
     })
     
+    chooseFighter.addEventListener('click', function() {
+        p.playerArray.push(p.playerFighter)
+        document.getElementById('fighter').classList.add('hidden')
+        if(playerBeginningCount < 3) {
+            playerBeginningCount += 1
+        }
+        else {
+            startingPlayerText.classList.add('hidden')
+        }
+        startingPlayerText.innerHTML = `Player ${playerBeginningCount} choose your character`
+    })
+
+    startGameButton.addEventListener('click', function() {
+        startModal.classList.add('hidden')
+        p.displayActivePlayer(0)
+    })
 }
