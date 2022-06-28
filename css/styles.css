@@ -6,6 +6,7 @@
 body {
   color: white;
   background-color: black;
+  font-family: 'Tangerine', cursive;
   font-size: 0;
   text-align: center;
   display: -webkit-box;
@@ -195,10 +196,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -208,40 +209,50 @@ body {
   width: 90%;
   height: auto;
   color: white;
-  font-size: 35px;
+  font-size: 80px;
   font-weight: 700;
   padding-bottom: 5px;
 }
 
-.start .choose-your-character {
-  min-width: 100px;
-  min-height: 100px;
+.start .side-by-side .space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.start .side-by-side .choose-your-character {
+  min-width: 200px;
+  min-height: 200px;
   border: 2px solid black;
   border-radius: 10px;
-  margin: 0px 10px;
+  margin: 50px 10px;
   color: black;
-  font-size: 20px;
+  font-size: 40px;
   text-indent: -9999px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.start .choose-your-character:hover {
+.start .side-by-side .choose-your-character:hover {
   background-image: none;
   background-color: white;
   text-indent: 0px;
   text-align: center;
 }
 
-.start .archer {
+.start .side-by-side .archer {
   background-image: url("/assets/Archer.jpg");
 }
 
-.start .thief {
+.start .side-by-side .thief {
   background-image: url("/assets/Thief.jpg");
 }
 
-.start .fighter {
+.start .side-by-side .fighter {
   background-image: url("/assets/Fighter.png");
 }
 

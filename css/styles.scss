@@ -5,6 +5,7 @@
 body {
     color: white;
     background-color: rgb(0, 0, 0);
+    font-family: 'Tangerine', cursive;
     font-size: 0;
     text-align: center;
     display: flex;
@@ -34,55 +35,58 @@ body {
 
 
 //OPENING MODAL
-  .start {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+.start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-      .side-by-side {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          width: 90%;
-          height: auto;
-          color: rgb(255, 255, 255);
-          font-size: 35px;
-          font-weight: 700;
-          padding-bottom: 5px;
-          
-      }
+    .side-by-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        color: rgb(255, 255, 255);
+        font-size: 80px;
+        font-weight: 700;
+        padding-bottom: 5px;
+        
+        .space {
+            display: flex;
+            flex-direction: row;
+        }  
+        .choose-your-character {
+            min-width: 200px;
+            min-height: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 50px 10px;
+            color: black;
+            font-size: 40px;
+            text-indent: -9999px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-    .choose-your-character {
-        min-width: 100px;
-        min-height: 100px;
-        border: 2px solid black;
-        border-radius: 10px;
-        margin: 0px 10px;
-        color: black;
-        font-size: 20px;
-        text-indent: -9999px;
-        background-repeat: no-repeat;
-        background-size: cover;  
+        .choose-your-character:hover {
+            background-image: none;
+            background-color: white;
+            text-indent: 0px;
+            text-align: center;  
+        }
+        .archer {
+            background-image: url('/assets/Archer.jpg');
+        }
+        .thief {
+            background-image: url('/assets/Thief.jpg');    
+        }
+        .fighter {
+            background-image: url('/assets/Fighter.png');
+        }
     }
-    .choose-your-character:hover {
-        background-image: none;
-        background-color: white;
-        text-indent: 0px;
-        text-align: center;  
-    }
-    .archer {
-        background-image: url('/assets/Archer.jpg');
-    }
-    .thief {
-        background-image: url('/assets/Thief.jpg');    
-    }
-    .fighter {
-        background-image: url('/assets/Fighter.png');
-    }
-      
-  }
+}
 
 //HEXBOARD
   #hexboard {
