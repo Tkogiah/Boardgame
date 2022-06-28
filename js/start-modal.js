@@ -39,6 +39,8 @@ textBox.innerHTML = `
 
 export function setInMotion() {
     startModal.classList.remove('hidden')
+    document.getElementById('hexboard').classList.add('hidden')
+    document.getElementById('playmat').classList.add('hidden')
     startModal.appendChild(textBox)
     
     let sideBySide = document.getElementById('side-by-side');
@@ -94,6 +96,8 @@ export function setInMotion() {
 
     startGameButton.addEventListener('click', function() {
         startModal.classList.add('hidden')
+        document.getElementById('hexboard').classList.remove('hidden')
+        document.getElementById('playmat').classList.remove('hidden')
         p.displayActivePlayer(0)
     })
 }
