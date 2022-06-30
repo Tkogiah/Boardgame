@@ -9,6 +9,9 @@ body {
     font-size: 0;
     text-align: center;
     display: flex;
+    background-image: url(/assets/castle.jpg);
+    background-repeat: no-repeat;
+    
   }
 
 
@@ -94,7 +97,8 @@ body {
     min-width: 905px;
     margin-right: 5px;
     margin-left: 5px;
-    margin-top: 50px;
+    margin-top: 0px;
+    
   }
   .hex {
     display: inline-block;
@@ -180,7 +184,7 @@ body {
     height: 95vh;
     background-color: rgb(151, 68, 0);
     background-image: url(/assets/playmatBG.jpg);
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -195,7 +199,7 @@ body {
         display: flex;
         flex-direction: row;
         font-size: 25px;
-        
+        padding-bottom: 10px;
         .stats {
             margin-left: 0px;
             max-height: 100px;
@@ -221,8 +225,8 @@ body {
         }
         .photo {
             margin-left: 10px;
-            min-width: 100px;
-            max-height: 100px;
+            min-width: 125px;
+            max-height: 125px;
             background-color: white;
             
             background-repeat: no-repeat;
@@ -387,7 +391,7 @@ body {
         }
         .actions {
             height: 175px;
-            min-width: 95px;
+            min-width: 100px;
             
             display: flex;
             flex-direction: column;
@@ -398,14 +402,16 @@ body {
                 margin: 10px 5px;
                 padding: 3px;
                 border: 2px solid black;
+                font-size: 25px;
                 border-radius: 5px;
-                background-color: rgba(22, 22, 122, 0.637);
+                background-color: rgba(22, 22, 122, 0.9);
             }
             .hand {
                 @include actions
             }
             .merchant {
-                @include actions
+                @include actions;
+                text-align: center;
             }
             .end {
                 @include actions 

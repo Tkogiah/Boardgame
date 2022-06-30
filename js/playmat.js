@@ -198,7 +198,7 @@ function displayEnemies() {
         enemyName.classList.add('enemy-stat-width')
         enemyLocation.classList.add('enemy-stat-width')
         enemyHealth.classList.add('enemy-stat-width')
-        enemyName.innerText = `Name: ${element.name} ${enemyArray.indexOf(element)}`
+        enemyName.innerText = `Name: ${element.name} ${enemyArray.indexOf(element) + 1}`
         enemyLocation.innerText = `Location: ${element.location}`
         enemyHealth.innerText = `Health: ${element.health}`
         enemy.appendChild(enemyName)

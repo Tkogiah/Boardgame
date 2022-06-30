@@ -12,6 +12,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-image: url(/assets/castle.jpg);
+  background-repeat: no-repeat;
 }
 
 @-webkit-keyframes frozen {
@@ -261,7 +263,7 @@ body {
   min-width: 905px;
   margin-right: 5px;
   margin-left: 5px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .hex {
@@ -361,7 +363,7 @@ body {
   height: 95vh;
   background-color: #974400;
   background-image: url(/assets/playmatBG.jpg);
-  padding: 20px;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,6 +391,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   font-size: 25px;
+  padding-bottom: 10px;
 }
 
 .right-of-board .top .stats {
@@ -414,8 +417,8 @@ body {
 
 .right-of-board .top .photo {
   margin-left: 10px;
-  min-width: 100px;
-  max-height: 100px;
+  min-width: 125px;
+  max-height: 125px;
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -651,7 +654,7 @@ body {
 
 .right-of-board .bottom .actions {
   height: 175px;
-  min-width: 95px;
+  min-width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -669,24 +672,28 @@ body {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
+  font-size: 25px;
   border-radius: 5px;
-  background-color: rgba(22, 22, 122, 0.637);
+  background-color: rgba(22, 22, 122, 0.9);
 }
 
 .right-of-board .bottom .actions .merchant {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
+  font-size: 25px;
   border-radius: 5px;
-  background-color: rgba(22, 22, 122, 0.637);
+  background-color: rgba(22, 22, 122, 0.9);
+  text-align: center;
 }
 
 .right-of-board .bottom .actions .end {
   margin: 10px 5px;
   padding: 3px;
   border: 2px solid black;
+  font-size: 25px;
   border-radius: 5px;
-  background-color: rgba(22, 22, 122, 0.637);
+  background-color: rgba(22, 22, 122, 0.9);
 }
 
 .right-of-board .bottom .board-details {
