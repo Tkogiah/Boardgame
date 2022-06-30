@@ -179,6 +179,7 @@ body {
     margin-left: 10px;
     height: 95vh;
     background-color: rgb(151, 68, 0);
+    background-image: url(/assets/playmatBG.jpg);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -193,6 +194,7 @@ body {
         width: 100%;
         display: flex;
         flex-direction: row;
+        font-size: 25px;
         
         .stats {
             margin-left: 0px;
@@ -232,7 +234,7 @@ body {
             
             
             .level {
-                font-size: 12px;
+                font-size: 20px;
                 font-weight: bolder;
                 position: absolute;
                 bottom: 0;
@@ -259,7 +261,7 @@ body {
                     border: 2px solid black;
                     border-radius: 5px;
                     padding: 3px;
-                    background-color: rgba(220, 20, 60, 0.63);
+                    background-color: rgba(220, 20, 60, 0.9);
                 }
             }
             .pool {
@@ -291,13 +293,14 @@ body {
         margin-bottom: 20px;
         border: 3px solid black;
         
-        background-color: rgba(255, 255, 255, 0.555);
+        background-color: rgba(255, 255, 255, .9);
 
         .player-stats {
             width: 99%;
             height: 18%;
             border-bottom: 1px solid black;
             text-align: left;
+            font-size: 25px;
             padding-left: 10px;
             display: flex;
             color: black;
@@ -314,6 +317,7 @@ body {
             height: 9.85%;
             border-bottom: 1px solid black;
             text-align: left;
+            font-size: 30px;
             padding-left: 10px;
             display: flex;
             color: black;
@@ -368,12 +372,12 @@ body {
         }
         .deck {
             @include cardstats;
-            background-color: rgba(0, 120, 0, 0.637);
+            background-color: rgba(0, 120, 0, 0.9);
     
         }
         .discard {
             @include cardstats;
-            background-color: rgba(120, 0, 0, 0.637);
+            background-color: rgba(120, 0, 0, 0.9);
         }
         .draw {
             padding-bottom: 50px;
@@ -419,7 +423,7 @@ body {
             width: 100%;
             border: 2px solid black;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.582);
+            background-color: rgba(255, 255, 255, 0.9);
             color: white;
             
             @mixin toggle {
@@ -430,14 +434,14 @@ body {
             }
             .show-enemy {
                 @include toggle;
-                background-color: rgba(120, 0, 0, 0.637);
+                background-color: rgba(120, 0, 0, 0.9);
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
             .show-player {
                 @include toggle;
-                background-color: rgba(0, 120, 104, 0.637);
+                background-color: rgba(0, 120, 104, 0.9);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -447,7 +451,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 @include toggle;
-                background-color: rgba(120, 118, 0, 0.637);
+                background-color: rgba(120, 118, 0, 0.9);
             }
             
         }
