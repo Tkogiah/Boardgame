@@ -99,5 +99,6 @@ export function setInMotion() {
         document.getElementById('hexboard').classList.remove('hidden')
         document.getElementById('playmat').classList.remove('hidden')
         p.displayActivePlayer(0)
+        p.displayActive();
     })
 }

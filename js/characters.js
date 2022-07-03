@@ -51,7 +51,7 @@ class Player {
         this.attacks = 0,
         this.movement = 0,
         this.deck = {
-            drawPile:['card one','card one','card one','card one','card one'],
+            drawPile:[],
             handPile:['card two', 'card-two', 'card-two','card-two','card-two'],
             discardPile: ['card-three']
         },

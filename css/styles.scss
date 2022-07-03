@@ -181,7 +181,7 @@ body {
     min-width: 905px; 
     width: 49vw;
     margin-left: 10px;
-    height: 95vh;
+    height: 98vh;
     background-color: rgb(151, 68, 0);
     background-image: url(/assets/playmatBG.jpg);
     padding: 10px;
@@ -337,10 +337,11 @@ body {
         }
         .all-stats {
             width: 99%;
-            height: 6%;
+            
             border-bottom: 1px solid black;
             text-align: left;
             padding-left: 10px;
+            font-size: 30px;
             display: flex;
             color: black;
             flex-direction: row;
@@ -385,7 +386,7 @@ body {
         }
         .draw {
             padding-bottom: 50px;
-            font-size: 25px;
+            font-size: 30px;
             font-weight: bold;
             
         }
@@ -433,7 +434,7 @@ body {
             color: white;
             
             @mixin toggle {
-                font-size: 16px;
+                font-size: 30px;
                 margin: 3px;
                 border: 2px solid black;
                 border-radius: 5px;

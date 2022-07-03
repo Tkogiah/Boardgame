@@ -25,9 +25,8 @@ endTurn.addEventListener('click', function() {
         log(playerArray[0])
     }
     displayActivePlayer(0)
-    displayActive()
     displayActiveEnemies(enemyArray)
-    
+    displayActive()
     
 })
 
@@ -125,7 +124,7 @@ activeButton.addEventListener('click', function() {
     displayActive()
 })
 
-function displayActive() {
+export function displayActive() {
     activeScreen.innerHTML = ''
     let allArray = []
     for(let i=0;i<playerArray.length; i++) { allArray.push(playerArray[i]) }
