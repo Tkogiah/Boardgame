@@ -453,13 +453,13 @@ body {
                 align-items: center;
                 justify-content: center;
             }
-            .active {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                @include toggle;
-                background-color: rgba(120, 118, 0, 0.9);
-            }
+            // .active {
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     @include toggle;
+            //     background-color: rgba(120, 118, 0, 0.9);
+            // }
             
         }
     }

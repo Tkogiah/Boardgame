@@ -21,12 +21,12 @@ endTurn.addEventListener('click', function() {
     playerArray[0].money = 0
     playerArray.push(playerArray[0])
     playerArray.shift()
-    if(playerArray[0]) {
-        log(playerArray[0])
-    }
+    // if(playerArray[0]) {
+    //     log(playerArray[0])
+    // }
     displayActivePlayer(0)
     displayActiveEnemies(enemyArray)
-    displayActive()
+    
     
 })
 
@@ -86,12 +86,18 @@ export function displayActiveEnemies(enemiesArray) {
         if(element.location < 1) { 
             element.location = 0
             playersLose()
-        }        
-        document.getElementById(element.location).classList.add('enemy')
-        document.getElementById(element.location).classList.add(`${element.health}`)
-        document.getElementById(element.location).addEventListener('click', (e) => {
             
-        })
+        }
+        if(element.location >= 1) {
+                  
+            document.getElementById(element.location).classList.add('enemy')
+            document.getElementById(element.location).classList.add(`${element.health}`)
+            document.getElementById(element.location).addEventListener('click', (e) => {
+            
+            })
+            displayEnemies()  
+        }
+        
         
     });
     
@@ -116,37 +122,11 @@ function playersLose() {
 //middle playmat display screen
 
 const activeScreen = $('game-stats')
-const activeButton = $('active')
 const activePlayers = $('players')
 const activeEnemies = $('enemies')
 
-activeButton.addEventListener('click', function() {
-    displayActive()
-})
 
-export function displayActive() {
-    activeScreen.innerHTML = ''
-    let allArray = []
-    for(let i=0;i<playerArray.length; i++) { allArray.push(playerArray[i]) }
-    for(let i=0;i<enemyArray.length; i++) { allArray.push(enemyArray[i]) }
-    allArray.forEach(element => {
-        let character = document.createElement('div')
-        let characterName = document.createElement('div')
-        let characterLocation = document.createElement('div')
-        let characterType = document.createElement('div')
-        character.classList.add('all-stats')
-        characterName.classList.add('all-stat-width')
-        characterLocation.classList.add('all-stat-width')
-        characterType.classList.add('all-stat-width')
-        characterName.innerText = `Name: ${element.name}`
-        characterLocation.innerText = `Location: ${element.location}`
-        characterType.innerText = `Type: ${element.type}`
-        character.appendChild(characterName)
-        character.appendChild(characterLocation)
-        character.appendChild(characterType)
-        activeScreen.appendChild(character)
-     })
-}
+
 
 activePlayers.addEventListener('click', function() {
     displayPlayers()
