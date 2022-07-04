@@ -26,6 +26,7 @@ endTurn.addEventListener('click', function() {
     // }
     displayActivePlayer(0)
     displayActiveEnemies(enemyArray)
+    determineEndGame(enemyArray)
     
     
 })
@@ -83,13 +84,10 @@ export function displayActiveEnemies(enemiesArray) {
     enemiesArray.forEach(element => {
         let enemyMovement = Math.floor(Math.random() * 10) + 1
         element.location -= enemyMovement
-        if(element.location < 1) { 
+        if(element.location <= 0) { 
             element.location = 0
-            playersLose()
-            
         }
-        if(element.location >= 1) {
-                  
+        if(element.location > 0) {     
             document.getElementById(element.location).classList.add('enemy')
             document.getElementById(element.location).classList.add(`${element.health}`)
             document.getElementById(element.location).addEventListener('click', (e) => {
@@ -102,6 +100,16 @@ export function displayActiveEnemies(enemiesArray) {
     });
     
 }
+function determineEndGame(enemiesArray) {
+    enemiesArray.forEach(element => {
+        if(element.location <= 0) { 
+            element.location = 0
+            activeScreen.innerHTML = ''
+            playersLose()
+        }
+    })
+}
+
 function playersLose() {
     activeScreen.innerHTML = ''
     endTurn.classList.add('hidden')
@@ -115,7 +123,9 @@ function playersLose() {
         window.location.reload(true)
     })
     modal.appendChild(restart)
+    
     activeScreen.appendChild(modal)
+    
 
 }
 
