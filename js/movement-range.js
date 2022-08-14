@@ -64,8 +64,11 @@ function buildArrayOfAllHexIndexes(array, matrix) {
 }
 buildArrayOfAllHexIndexes(indexesOfHexMatrix, hexMatrix)
 
-//ALGORITHMS TO HIGHLIGHT RANGE BASED ON CHARACTER RANGE
+//ARRAY THAT HOLDS HEXBOARD LOCATIONS FOR USE IN OTHER FUNCTIONS
 export let highlightRangeArray = []
+
+//FUNCTIONS THAT TAKE A LOCATION AND RANGE AND THEN DETERMINE WHICH LOCATIONS SHOULD 
+//BE PUSHED INTO  highlightRangeArray 
 function fillRight(range, row, column) {
     let counter = range*2
     let rows = row
@@ -125,6 +128,7 @@ function fillDown(range, row, column) {
         counter = counter -1 
     }
 }
+//FUNCTION TO HIGHLIGHT AN ARRAY OF LOCATOINS WITH SPECIFIED COLOR
 function highlightHexes(array, color) {
     array.forEach((e) => {
         if(e <=90 ){
