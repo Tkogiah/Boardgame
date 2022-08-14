@@ -58,7 +58,7 @@ class Player {
         this.remainingAttacks = 0,
         this.remainingMovements = 0,
         this.remainingDraws = 0
-    }   
+    }  
 }
 export class Archer extends Player {
     constructor(name) {
